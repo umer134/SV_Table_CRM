@@ -15,6 +15,7 @@
     display: flex;
     align-items: center;
     padding-left: 5px;
+    border: 1px solid;
 }
 
 .name-input{
@@ -44,4 +45,71 @@ text-align: center;
 padding-right: 5px;
 }
 
+/* results ============= */
 
+.form-formul-values {
+    display: flex;
+    margin-top: 10px;
+}
+
+.on-car-result,
+.everything-result,
+.pary-on-car-result,
+.quant-all-result,
+.rolls-result,
+.time-printing-result,
+.relays-result,
+.time-printing-roll-result,
+.checking-result,
+.material-result,
+.printer-result,
+.profile-result,
+.color-settings-result,
+.montage-result,
+.demontage-result,
+.view-result{
+  
+  padding: 5px;
+  border: 1px solid ;
+  height: 29px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  text-align: center;
+  min-width: 50px;
+}
+
+.on-car-result, .everything-result,
+.pary-on-car-result, .quant-all-result
+{
+    min-width: 55px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.time-printing-result,
+.relays-result,
+.time-printing-roll-result{
+    width: 60px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checking-result,
+.material-result,
+.printer-result,
+.profile-result,
+.color-settings-result,
+.montage-result,
+.demontage-result,
+.view-result{
+    width: 80px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

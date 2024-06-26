@@ -85,7 +85,10 @@ p{
 .material,
 .printer,
 .profile,
-.color-settings{
+.color-settings,
+.montage,
+.demontage,
+.view{
   padding: 5px;
   border: 1px solid ;
   height: fit-content;
@@ -93,6 +96,7 @@ p{
   display: flex;
   align-items: center;
   font-size: 15px;
+  text-align: center;
 }
 
 .proj-name{
@@ -133,7 +137,10 @@ p{
 .material,
 .printer,
 .profile,
-.color-settings{
+.color-settings,
+.montage,
+.demontage,
+.view{
   min-width: 80px;
 }
 

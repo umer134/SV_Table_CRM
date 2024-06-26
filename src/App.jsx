@@ -6,7 +6,8 @@ import FormBoxes from './components/FormBoxes'
 import FormInputs from './components/formInputs/FormInputs'
 
 function App() {
-
+  
+  const [tableRows, setTableRows] = useState([50])
 
   return (
     <div className='App'>

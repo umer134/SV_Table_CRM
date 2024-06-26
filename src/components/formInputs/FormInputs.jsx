@@ -35,7 +35,21 @@ const FormInputs = () => {
                     <input type="text" name="machPogm_pary-input_8" className="machPogm_party-input"/>
                 </div>
                 <div className="form-formul-values">
-                    
+                    <div name="formul-result" className="on-car-result"></div>
+                    <div name="formul-result" className="everything-result"></div>
+                    <div name="formul-result" className="pary-on-car-result"></div>
+                    <div name="formul-result" className="quant-all-result"></div>
+                    <div name="formul-result" className="time-printing-result"></div>
+                    <div name="formul-result" className="relays-result"></div>
+                    <div name="formul-result" className="time-printing-roll-result"></div>
+                    <div name="formul-result" className="checking-result"></div>
+                    <div name="formul-result" className="material-result"></div>
+                    <div name="formul-result" className="printer-result"></div>
+                    <div name="formul-result" className="profile-result"></div>
+                    <div name="formul-result" className="color-settings-result"></div>
+                    <div name="formul-result" className="montage-result"></div>
+                    <div name="formul-result" className="demontage-result"></div>
+                    <div name="formul-result" className="view-result"></div>
                 </div>
             </div>
         </div>

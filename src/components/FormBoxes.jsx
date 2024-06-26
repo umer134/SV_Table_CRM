@@ -57,6 +57,9 @@ const FormBoxes = () => {
                     <div className="printer">Принтер</div>
                     <div className="profile">Профиль</div>
                     <div className="color-settings">Настройка цвета</div>
+                    <div className="montage">м2 монтаж</div>
+                    <div className="demontage">м2 демонтаж</div>
+                    <div className="view">Вид</div>
             </dir>
         </div>
      );
