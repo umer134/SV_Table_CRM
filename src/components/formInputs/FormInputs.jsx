@@ -36,7 +36,7 @@ const FormInputs = () => {
                 </div>
                 <div className="form-formul-values">
                     <div name="formul-result" className="on-car-result"></div>
-                    <div name="formul-result" className="everything-result"></div>
+                    <div name="formul-result" className="everything-result">5,667</div>
                     <div name="formul-result" className="pary-on-car-result"></div>
                     <div name="formul-result" className="quant-all-result"></div>
                     <div name="formul-result" className="time-printing-result"></div>
