@@ -4,9 +4,6 @@
   padding: 0;
 }
 
-html, body{
-  min-width: 100%;
-}
 
 .FormTable .container{
   margin-top: 30px;
@@ -74,11 +71,9 @@ p{
 .form-boxes {
   margin-top: 50px;
   margin-left: 10px;
-  min-width: 100%;
-  
 }
 
-.form-boxes div{
+.form-boxes .container div{
   background: rgb(151, 223, 151);
 }
 
@@ -114,36 +109,44 @@ p{
 
 .proj-name{
   min-width: 105px;
+  max-width: 105px;
 }
 
 .city{
   min-width: 86px;
+  max-width: 86px;
 }
 
 .type-machine{
   min-width: 66px;
+  max-width: 66px;
 }
 
 .quantity-machines{
   min-width: 90px;
+  max-width: 90px;
 }
 
 .quantity-machine-partyes,
 .quantity-pogM-mach-partyes{
   min-width: 400px;
+  max-width: 400px;
 }
 
 .on-machine, .everything{
   min-width: 50px;
+  max-width: 50px;
  
 }
 
 .quantity-pogM, .rolls{
   min-width: 110px;
+  max-width: 110px;
 }
 
 .time-printing, .relays, .time-printing-roll{
   min-width: 60px;
+  max-width: 60px;
 }
 
 .checking,
@@ -155,6 +158,7 @@ p{
 .demontage,
 .view{
   min-width: 80px;
+  max-width: 80px;
 }
 
 .quantity-machine-partyes,
@@ -195,6 +199,7 @@ p{
   padding-top: 5px;
   height: 30px;
   min-width: 50px;
+  max-width: 50px;
 }
 
 .quant-pogM-box, .roll-boxes{
@@ -208,7 +213,8 @@ p{
   font-size: 12px;
   font-weight: 700;
   height: 30px;
-  min-width: 55px
+  min-width: 55px;
+  max-width: 55px;
 }
 
 .quant-pog-on-car, .on-car{
