@@ -136,12 +136,28 @@ p{
 .on-machine, .everything{
   min-width: 50px;
   max-width: 50px;
- 
+}
+
+.form-boxes .container .on-machine, .form-boxes .container .everything{
+  background: white;
+  border-bottom: 3px solid;
 }
 
 .quantity-pogM, .rolls{
   min-width: 110px;
   max-width: 110px;
+}
+
+.form-boxes .container .quantity-pogM,
+.form-boxes .container .quant-pog-on-car,
+.form-boxes .container .quant-all,
+.form-boxes .container .rolls,
+.form-boxes .container .on-car,
+.form-boxes .container .time-printing,
+.form-boxes .container .relays,
+.form-boxes .container .time-printing-roll,
+.form-boxes .container .checking{
+  background: white;
 }
 
 .time-printing, .relays, .time-printing-roll{

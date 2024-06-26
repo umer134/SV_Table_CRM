@@ -36,14 +36,14 @@ const FormBoxes = () => {
                     </div>
                     
                     <div className="quantity-pogM">
-                        <div>Кол-во пог.м</div>
+                        <h>Кол-во пог.м</h>
                         <div className="quant-pogM-box">
                         <div className="quant-pog-on-car">На <br/> машину</div>
                         <div className="quant-all">Всего</div>
                         </div>
                     </div>
                     <div className="rolls">
-                        <div>Рулоны</div>
+                        <h>Рулоны</h>
                         <div className="roll-boxes">
                         <div className="on-car">На машину</div>
                         <div className="quant-all">Всего</div>

@@ -23,8 +23,8 @@ const FormInputs = () => {
                     <input type="text" name="mach_pary-input_6" className="mach_party-input"/>
                     <input type="text" name="mach_pary-input_7" className="mach_party-input"/>
                     <input type="text" name="mach_pary-input_8" className="mach_party-input"/>
-                    <input type="text" className="on-machine-input"/>
-                    <input type="text" className="everything-input"/>
+                    <div className="on-machine-input"></div>
+                    <div className="everything-input"></div>
                     <input type="text" name="machPogm_pary-input_1" className="machPogm_party-input"/>
                     <input type="text" name="machPogm_pary-input_2" className="machPogm_party-input"/>
                     <input type="text" name="machPogm_pary-input_3" className="machPogm_party-input"/>

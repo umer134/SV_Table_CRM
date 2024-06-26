@@ -45,6 +45,17 @@
     max-width: 90px;
 }
 
+.on-machine-input, .everything-input{
+    height: 29px;
+    min-width: 50px;
+    max-width: 50px;
+    text-align: center;
+    padding-right: 5px;
+    background: rgb(124, 124, 124);
+    border: 1px solid black;
+    color: rgb(255, 255, 255);
+}
+
 .mach_party-input, .machPogm_party-input, .on-machine-input, .everything-input{
 min-width: 50px;
 max-width: 50px;
@@ -127,4 +138,14 @@ padding-right: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.material-result,
+.printer-result,
+.profile-result,
+.color-settings-result,
+.montage-result,
+.demontage-result,
+.view-result{
+    background: white !important
 }
