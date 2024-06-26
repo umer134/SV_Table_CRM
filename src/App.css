@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+.FormTable .container{
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
 .container{
   display: flex;
   flex-direction: row;
@@ -37,13 +42,25 @@ p{
 }
 
 .inp-formuls{
-  margin-top: 5px;
+  height: 40px;
+  width: 110px;
+  margin-top: 24px;
+  margin-left: 40px;
   padding: 7px;
   padding-top: 2px;
-  border-end-end-radius: 50%;
-  border-end-start-radius: 50%;
-  border-start-end-radius: 10%;
-  border-start-start-radius: 10%;
+  border-radius: 8%;
+  background: #4676D7;
+  color: #fff;
+  cursor: pointer;
+}
+
+.inp-formuls:hover {
+  background: #1d49aa;
+}
+
+.inp-formuls:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #cbd6ee;
 }
 
 /* ==================================== */

@@ -17,9 +17,14 @@ const FormTable = () => {
                     <div className="volume-block">
                     <h4>время печати заказа, час <p>0</p></h4>
                     <h4>кол-во смен <p>0</p></h4>
-                    <button className="inp-formuls">вставить формулы</button>
                     </div>
                 </div>
+                <div className="btns-block">
+                    <button className="inp-formuls">вставить формулы</button>
+                    <button className="inp-formuls">внести данные</button>
+                    <button className="inp-formuls">очистить форму</button>
+                </div>
+                
             </div>
         </div>
      );
