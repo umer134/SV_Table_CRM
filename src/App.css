@@ -1,0 +1,183 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+}
+
+.volume-block{
+  max-width: 170px;
+  margin-bottom: 5px;
+  
+}
+
+h4{
+  border: 1px solid black;
+  width: 150px;
+  margin: 5px 0;
+  display: flex;
+  padding: 1px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+p{
+  border-left: 1px solid black;
+  padding: 0  10px;
+  margin-left: 10px;
+  font-size: 24px;
+}
+
+.time{
+  margin-left: 50px;
+}
+
+.inp-formuls{
+  margin-top: 5px;
+  padding: 7px;
+  padding-top: 2px;
+  border-end-end-radius: 50%;
+  border-end-start-radius: 50%;
+  border-start-end-radius: 10%;
+  border-start-start-radius: 10%;
+}
+
+/* ==================================== */
+
+.form-boxes {
+  margin-top: 50px;
+}
+
+.proj-name, 
+.city, .type-machine, 
+.quantity-machines, 
+.quantity-machine-partyes,
+.on-machine,
+.everything,
+.quantity-pogM-mach-partyes,
+.quantity-pogM,
+.rolls,
+.time-printing,
+.relays,
+.time-printing-roll,
+.checking,
+.material,
+.printer,
+.profile,
+.color-settings{
+  padding: 5px;
+  border: 1px solid ;
+  height: fit-content;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.proj-name{
+  width: 105px;
+}
+
+.city{
+  width: 86px;
+}
+
+.type-machine{
+  width: 66px;
+}
+
+.quantity-machines{
+  width: 90px;
+}
+
+.quantity-machine-partyes,
+.quantity-pogM-mach-partyes{
+  min-width: 400px;
+}
+
+.on-machine, .everything{
+  width: 50px;
+ 
+}
+
+.quantity-pogM, .rolls{
+  min-width: 110px;
+}
+
+.time-printing, .relays, .time-printing-roll{
+  width: 60px;
+}
+
+.checking,
+.material,
+.printer,
+.profile,
+.color-settings{
+  width: 80px;
+}
+
+.quantity-machine-partyes,
+.quantity-pogM-mach-partyes,
+.quantity-pogM,
+.rolls{
+  flex-direction: column;
+}
+
+.quant-pogM-box,
+.roll-boxes{
+  display: flex;
+  flex-direction: row;
+}
+
+.quantity-machine-partyes, 
+.quantity-pogM-mach-partyes,
+.quantity-pogM, .rolls{
+  position: relative;
+}
+.quantity-machine-partyes .list, 
+.quantity-pogM-mach-partyes .list,
+.quant-pogM-box, .roll-boxes
+{
+  position: absolute;
+  bottom: 0;
+}
+
+.list{
+  display: flex;
+  border: 1px solid;
+  margin-top: 19px;
+}
+.list .mach-party,
+.list .pog-mach-party{
+  border: 1px solid;
+  text-align: center;
+  padding-top: 5px;
+  height: 30px;
+  width: 50px;
+}
+
+.quant-pogM-box, .roll-boxes{
+  display: flex;
+  border: 1px solid;
+}
+
+.quant-pogM-box .quant-pog-on-car, .quant-all,
+.roll-boxes .on-car, .quant-all{
+  border: 1px solid;
+  font-size: 12px;
+  font-weight: 700;
+  height: 30px;
+  width: 55px
+}
+
+.quant-pog-on-car, .on-car{
+  padding-left: 6px;
+}
+
+.quant-all, .quant-all{
+  padding: 7px;
+}
