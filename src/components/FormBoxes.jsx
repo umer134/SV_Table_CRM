@@ -5,9 +5,9 @@ const FormBoxes = () => {
                 <div className="proj-name">Наименование проекта</div>
                 <div className="city">Город</div>
                 <div className="type-machine">Вид машины</div>
-                <div className="quantity-machines">Кол-во однотипных машин</div>
+                <div className="quantity-machines">Кол-во одно- <br/> типных машин</div>
                 <div className="quantity-machine-partyes">
-                            <div>Обозначение и кол-во однотипных частей на машину</div>
+                            <p>Обозначение и кол-во однотипных частей на машину</p>
                             <div className="list">
                             <div className="mach-party">1</div>
                             <div className="mach-party">2</div>
@@ -22,7 +22,7 @@ const FormBoxes = () => {
                 <div className="on-machine">На маши <br/> ну</div>
                 <div className="everything">Всего</div>
                 <div className="quantity-pogM-mach-partyes">
-                            <div>Кол-во пог.м каждой части машины</div>
+                            <p>Кол-во пог.м каждой части машины</p>
                             <div className="list">
                             <div className="pog-mach-party">1</div>
                             <div className="pog-mach-party">2</div>
@@ -56,7 +56,7 @@ const FormBoxes = () => {
                     <div className="material">Материал</div>
                     <div className="printer">Принтер</div>
                     <div className="profile">Профиль</div>
-                    <div className="color-settings">Настройка цвета</div>
+                    <div className="color-settings">Настрой-<br/> ка цвета</div>
                     <div className="montage">м2 монтаж</div>
                     <div className="demontage">м2 демонтаж</div>
                     <div className="view">Вид</div>
