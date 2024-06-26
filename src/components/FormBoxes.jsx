@@ -1,7 +1,7 @@
 const FormBoxes = () => {
     return ( 
         <div className="form-boxes">
-            <dir className="container">
+            <div className="container">
                 <div className="proj-name">Наименование проекта</div>
                 <div className="city">Город</div>
                 <div className="type-machine">Вид машины</div>
@@ -60,7 +60,7 @@ const FormBoxes = () => {
                     <div className="montage">м2 монтаж</div>
                     <div className="demontage">м2 демонтаж</div>
                     <div className="view">Вид</div>
-            </dir>
+            </div>
         </div>
      );
 }

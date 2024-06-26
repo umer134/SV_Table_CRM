@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import { v4 as uuidv4 } from 'uuid'
 import './App.css'
 import FormTable from './components/FormTable'
 import FormBoxes from './components/FormBoxes'
@@ -7,13 +7,19 @@ import FormInputs from './components/formInputs/FormInputs'
 
 function App() {
   
-  const [tableRows, setTableRows] = useState([50])
+  const [tableRows, setTableRows] = useState(Array(50).fill())
 
   return (
     <div className='App'>
      <FormTable/>
      <FormBoxes />
-     <FormInputs />
+      {
+      tableRows?.map((_) => (
+        <div key={uuidv4()}>
+          <FormInputs />
+        </div>
+      ))
+     }
     </div>
   )
 }
