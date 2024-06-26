@@ -34,6 +34,9 @@ const FormInputs = () => {
                     <input type="text" name="machPogm_pary-input_7" className="machPogm_party-input"/>
                     <input type="text" name="machPogm_pary-input_8" className="machPogm_party-input"/>
                 </div>
+                <div className="form-formul-values">
+                    
+                </div>
             </div>
         </div>
      );
