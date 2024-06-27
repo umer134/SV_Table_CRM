@@ -44,7 +44,14 @@ const FormInputs = () => {
                     <div name="formul-result" className="time-printing-roll-result"></div>
                     <div name="formul-result" className="checking-result"></div>
                     <div name="formul-result" className="material-result"></div>
-                    <div name="formul-result" className="printer-result"></div>
+                    <select name="formul-result" className="printer-result">
+                        <option value="">Любой</option>
+                        <option value="">PLUS 3</option>
+                        <option value="">PLUS 2</option>
+                        <option value="">PLUS 1</option>
+                        <option value="">300</option>
+                        <option value="">Плоттер</option>
+                    </select>
                     <div name="formul-result" className="profile-result"></div>
                     <div name="formul-result" className="color-settings-result"></div>
                     <div name="formul-result" className="montage-result"></div>
