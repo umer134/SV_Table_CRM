@@ -1,11 +1,40 @@
 import { useState } from "react";
 import "./formInputs.css"
+import useCalculateData from "../../store/hooks/inxex";
 
 const FormInputs = () => {
 
-    const [rows, setRows] = useState([]);
+    const {mParty1, mParty2, mParty3, mParty4, mParty5, mParty6, mParty7, mParty8, onMach, 
+        setMParty1, setMParty2, setMParty3, setMParty4, setMParty5, setMParty6,
+        setMParty7, setMParty8} = useCalculateData()
 
-    // if(rows) return <p className="rows-loading">Loading...</p>
+    const [quantTypes, setQuantTypes] = useState('');
+    // const [mParty1, setMParty1] = useState('');
+    // const [mParty2, setMParty2] = useState('');
+    // const [mParty3, setMParty3] = useState('');
+    // const [mParty4, setMParty4] = useState('');
+    // const [mParty5, setMParty5] = useState('');
+    // const [mParty6, setMParty6] = useState('');
+    // const [mParty7, setMParty7] = useState('');
+    // const [mParty8, setMParty8] = useState('');
+    // const [onMach, setOnMach] = useState('');
+    const [evetything, setEverything] = useState('');
+    const [mPogParty1, setMPogParty1] = useState('');
+    const [mPogParty2, setMPogParty2] = useState('');
+    const [mPogParty3, setMPogParty3] = useState('');
+    const [mPogParty4, setMPogParty4] = useState('');
+    const [mPogParty5, setMPogParty5] = useState('');
+    const [mPogParty6, setMPogParty6] = useState('');
+    const [mPogParty7, setMPogParty7] = useState('');
+    const [mPogParty8, setMPogParty8] = useState('');
+    const [onCarRes, setOnCarRes] = useState('');
+    const [everyRes, setEveryres] = useState('');
+    const [paryOnCarRes, setParyOnCarRes] = useState('');
+    const [quantAllres, setQuantAllRess] = useState('');
+    const [timePrintRes, setTimePrintRes] = useState('');
+    const [relaysRes, setRelaysRes] = useState('');
+    const [timePrintRollRes, setTimePrintRollRes] = useState('');
+    
 
     return ( 
         <div className="FormInputs">
@@ -14,34 +43,34 @@ const FormInputs = () => {
                     <input type="text" className="name-input"/>
                     <input type="text" className="city-input"/>
                     <input type="text" className="mach_type-input"/>
-                    <input type="text" className="quant-mach_type-input"/>
-                    <input type="text" name="mach_pary-input_1" className="mach_party-input"/>
-                    <input type="text" name="mach_pary-input_2" className="mach_party-input"/>
-                    <input type="text" name="mach_pary-input_3" className="mach_party-input"/>
-                    <input type="text" name="mach_pary-input_4" className="mach_party-input"/>
-                    <input type="text" name="mach_pary-input_5" className="mach_party-input"/>
-                    <input type="text" name="mach_pary-input_6" className="mach_party-input"/>
-                    <input type="text" name="mach_pary-input_7" className="mach_party-input"/>
-                    <input type="text" name="mach_pary-input_8" className="mach_party-input"/>
-                    <div className="on-machine-input"></div>
-                    <div className="everything-input"></div>
-                    <input type="text" name="machPogm_pary-input_1" className="machPogm_party-input"/>
-                    <input type="text" name="machPogm_pary-input_2" className="machPogm_party-input"/>
-                    <input type="text" name="machPogm_pary-input_3" className="machPogm_party-input"/>
-                    <input type="text" name="machPogm_pary-input_4" className="machPogm_party-input"/>
-                    <input type="text" name="machPogm_pary-input_5" className="machPogm_party-input"/>
-                    <input type="text" name="machPogm_pary-input_6" className="machPogm_party-input"/>
-                    <input type="text" name="machPogm_pary-input_7" className="machPogm_party-input"/>
-                    <input type="text" name="machPogm_pary-input_8" className="machPogm_party-input"/>
+                    <input type="text" value={quantTypes} onChange={(e) => setQuantTypes(e.target.value)} className="quant-mach_type-input"/>
+                    <input type="text" value={mParty1} onChange={(e) => setMParty1(e.target.value)} name="mach_pary-input_1" className="mach_party-input"/>
+                    <input type="text" value={mParty2} onChange={(e) => setMParty2(e.target.value)} name="mach_pary-input_2" className="mach_party-input"/>
+                    <input type="text" value={mParty3} onChange={(e) => setMParty3(e.target.value)} name="mach_pary-input_3" className="mach_party-input"/>
+                    <input type="text" value={mParty4} onChange={(e) => setMParty4(e.target.value)} name="mach_pary-input_4" className="mach_party-input"/>
+                    <input type="text" value={mParty5} onChange={(e) => setMParty5(e.target.value)} name="mach_pary-input_5" className="mach_party-input"/>
+                    <input type="text" value={mParty6} onChange={(e) => setMParty6(e.target.value)} name="mach_pary-input_6" className="mach_party-input"/>
+                    <input type="text" value={mParty7} onChange={(e) => setMParty7(e.target.value)} name="mach_pary-input_7" className="mach_party-input"/>
+                    <input type="text" value={mParty8} onChange={(e) => setMParty8(e.target.value)} name="mach_pary-input_8" className="mach_party-input"/>
+                    <div className="on-machine-input">{onMach}</div>
+                    <div className="everything-input">{evetything}</div>
+                    <input type="text" value={mPogParty1} onChange={(e) => setMPogParty1(e.target.value)} name="machPogm_pary-input_1" className="machPogm_party-input"/>
+                    <input type="text" value={mPogParty2} onChange={(e) => setMPogParty2(e.target.value)} name="machPogm_pary-input_2" className="machPogm_party-input"/>
+                    <input type="text" value={mPogParty3} onChange={(e) => setMPogParty3(e.target.value)} name="machPogm_pary-input_3" className="machPogm_party-input"/>
+                    <input type="text" value={mPogParty4} onChange={(e) => setMPogParty4(e.target.value)} name="machPogm_pary-input_4" className="machPogm_party-input"/>
+                    <input type="text" value={mPogParty5} onChange={(e) => setMPogParty5(e.target.value)} name="machPogm_pary-input_5" className="machPogm_party-input"/>
+                    <input type="text" value={mPogParty6} onChange={(e) => setMPogParty6(e.target.value)} name="machPogm_pary-input_6" className="machPogm_party-input"/>
+                    <input type="text" value={mPogParty7} onChange={(e) => setMPogParty7(e.target.value)} name="machPogm_pary-input_7" className="machPogm_party-input"/>
+                    <input type="text" value={mPogParty8} onChange={(e) => setMPogParty8(e.target.value)} name="machPogm_pary-input_8" className="machPogm_party-input"/>
                 </div>
                 <div className="form-formul-values">
-                    <div name="formul-result" className="on-car-result"></div>
-                    <div name="formul-result" className="everything-result"></div>
-                    <div name="formul-result" className="pary-on-car-result"></div>
-                    <div name="formul-result" className="quant-all-result"></div>
-                    <div name="formul-result" className="time-printing-result"></div>
-                    <div name="formul-result" className="relays-result"></div>
-                    <div name="formul-result" className="time-printing-roll-result"></div>
+                    <div name="formul-result" className="on-car-result">{onCarRes}</div>
+                    <div name="formul-result" className="everything-result">{everyRes}</div>
+                    <div name="formul-result" className="pary-on-car-result">{paryOnCarRes}</div>
+                    <div name="formul-result" className="quant-all-result">{quantAllres}</div>
+                    <div name="formul-result" className="time-printing-result">{timePrintRes}</div>
+                    <div name="formul-result" className="relays-result">{relaysRes}</div>
+                    <div name="formul-result" className="time-printing-roll-result">{timePrintRollRes}</div>
                     <div name="formul-result" className="checking-result"></div>
                     <select name="formul-result" className="material-result">
                         <option value="">3640 M010 1.05</option>

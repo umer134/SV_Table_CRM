@@ -15,9 +15,7 @@ function App() {
      <FormBoxes />
       {
       tableRows?.map((_) => (
-        <div key={uuidv4()}>
-          <FormInputs />
-        </div>
+          <FormInputs key={uuidv4()} />
       ))
      }
     </div>
