@@ -5,9 +5,15 @@ import rowStores from "../../store/hooks/inxex";
 const FormInputs = ({index, start, setStart}) => {
 
     const useCalculateData = rowStores[index];
-    const {quantCars, setQuantCars, totalCarsParts, mParty1, mParty2, mParty3, mParty4, mParty5, mParty6, mParty7, mParty8, onMach,
-    setMParty1, setMParty2, setMParty3, setMParty4, setMParty5, setMParty6,
-    setMParty7, setMParty8 } = useCalculateData();
+    const {quantCars, setQuantCars, totalCarsParts, mParty1, mParty2,
+    mParty3, mParty4,mParty5, mParty6, mParty7, mParty8, onMach,
+    setMParty1, setMParty2, setMParty3, setMParty4, setMParty5, 
+    setMParty6, setMParty7, setMParty8, pogMParty1, pogMParty2,
+    pogMParty3, pogMParty4, pogMParty5, pogMParty6, pogMParty7,
+    pogMParty8, setPogMParty1, setPogMParty2, setPogMParty3,
+    setPogMParty4, setPogMParty5, setPogMParty6, setPogMParty7,
+    setPogMParty8, onCarPogM, totalCarPogM} = useCalculateData();
+    
     
     const calcAllOnMach = () => {
         rowStores.forEach((store) => {
@@ -15,23 +21,20 @@ const FormInputs = ({index, start, setStart}) => {
         });
       };
 
+      const calcPogMParts = () => {
+        rowStores.forEach((store) => {
+          store.getState().calcPogM(index);
+        });
+      };
+
       useEffect(() => {
         if (start === true) {
           calcAllOnMach();
+          calcPogMParts();
           setStart(start = false);
         }
       }, [start]);
 
-    const [mPogParty1, setMPogParty1] = useState('');
-    const [mPogParty2, setMPogParty2] = useState('');
-    const [mPogParty3, setMPogParty3] = useState('');
-    const [mPogParty4, setMPogParty4] = useState('');
-    const [mPogParty5, setMPogParty5] = useState('');
-    const [mPogParty6, setMPogParty6] = useState('');
-    const [mPogParty7, setMPogParty7] = useState('');
-    const [mPogParty8, setMPogParty8] = useState('');
-    const [onCarRes, setOnCarRes] = useState('');
-    const [everyRes, setEveryres] = useState('');
     const [paryOnCarRes, setParyOnCarRes] = useState('');
     const [quantAllres, setQuantAllRess] = useState('');
     const [timePrintRes, setTimePrintRes] = useState('');
@@ -57,18 +60,18 @@ const FormInputs = ({index, start, setStart}) => {
                     <input type="text" value={mParty8} onChange={(e) => setMParty8(e.target.value)} name="mach_pary-input_8" className="mach_party-input"/>
                     <div className="on-machine-input">{onMach}</div>
                     <div className="everything-input">{totalCarsParts}</div>
-                    <input type="text" value={mPogParty1} onChange={(e) => setMPogParty1(e.target.value)} name="machPogm_pary-input_1" className="machPogm_party-input"/>
-                    <input type="text" value={mPogParty2} onChange={(e) => setMPogParty2(e.target.value)} name="machPogm_pary-input_2" className="machPogm_party-input"/>
-                    <input type="text" value={mPogParty3} onChange={(e) => setMPogParty3(e.target.value)} name="machPogm_pary-input_3" className="machPogm_party-input"/>
-                    <input type="text" value={mPogParty4} onChange={(e) => setMPogParty4(e.target.value)} name="machPogm_pary-input_4" className="machPogm_party-input"/>
-                    <input type="text" value={mPogParty5} onChange={(e) => setMPogParty5(e.target.value)} name="machPogm_pary-input_5" className="machPogm_party-input"/>
-                    <input type="text" value={mPogParty6} onChange={(e) => setMPogParty6(e.target.value)} name="machPogm_pary-input_6" className="machPogm_party-input"/>
-                    <input type="text" value={mPogParty7} onChange={(e) => setMPogParty7(e.target.value)} name="machPogm_pary-input_7" className="machPogm_party-input"/>
-                    <input type="text" value={mPogParty8} onChange={(e) => setMPogParty8(e.target.value)} name="machPogm_pary-input_8" className="machPogm_party-input"/>
+                    <input type="number" value={pogMParty1} onChange={(e) => setPogMParty1(e.target.value)} name="machPogm_pary-input_1" className="machPogm_party-input"/>
+                    <input type="number" value={pogMParty2} onChange={(e) => setPogMParty2(e.target.value)} name="machPogm_pary-input_2" className="machPogm_party-input"/>
+                    <input type="number" value={pogMParty3} onChange={(e) => setPogMParty3(e.target.value)} name="machPogm_pary-input_3" className="machPogm_party-input"/>
+                    <input type="number" value={pogMParty4} onChange={(e) => setPogMParty4(e.target.value)} name="machPogm_pary-input_4" className="machPogm_party-input"/>
+                    <input type="number" value={pogMParty5} onChange={(e) => setPogMParty5(e.target.value)} name="machPogm_pary-input_5" className="machPogm_party-input"/>
+                    <input type="number" value={pogMParty6} onChange={(e) => setPogMParty6(e.target.value)} name="machPogm_pary-input_6" className="machPogm_party-input"/>
+                    <input type="number" value={pogMParty7} onChange={(e) => setPogMParty7(e.target.value)} name="machPogm_pary-input_7" className="machPogm_party-input"/>
+                    <input type="number" value={pogMParty8} onChange={(e) => setPogMParty8(e.target.value)} name="machPogm_pary-input_8" className="machPogm_party-input"/>
                 </div>
                 <div className="form-formul-values">
-                    <div name="formul-result" className="on-car-result">{onCarRes}</div>
-                    <div name="formul-result" className="everything-result">{everyRes}</div>
+                    <div name="formul-result" className="on-car-result">{onCarPogM}</div>
+                    <div name="formul-result" className="everything-result">{totalCarPogM}</div>
                     <div name="formul-result" className="pary-on-car-result">{paryOnCarRes}</div>
                     <div name="formul-result" className="quant-all-result">{quantAllres}</div>
                     <div name="formul-result" className="time-printing-result">{timePrintRes}</div>
