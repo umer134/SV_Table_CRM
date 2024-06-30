@@ -4,6 +4,9 @@ import { create } from 'zustand';
 
 const createRowStore = (index) => {
   return create((set) => ({
+
+    quantCars: '',
+    totalCarsParts: '',
     mParty1: '',
     mParty2: '',
     mParty3: '',
@@ -14,6 +17,7 @@ const createRowStore = (index) => {
     mParty8: '',
     onMach: 0,
 
+    setQuantCars: (value) => set(() => ({ quantCars: value })),
     setMParty1: (value) => set(() => ({ mParty1: value })),
     setMParty2: (value) => set(() => ({ mParty2: value })),
     setMParty3: (value) => set(() => ({ mParty3: value })),
@@ -25,11 +29,14 @@ const createRowStore = (index) => {
 
     calcOnMach: (index) => {
       const store = rowStores[index];
-      const { mParty1, mParty2, mParty3, mParty4, mParty5, mParty6, mParty7, mParty8 } = store.getState();
+      const { quantCars, mParty1, mParty2, mParty3, mParty4, mParty5, mParty6, mParty7, mParty8 } = store.getState();
       const arr = [mParty1, mParty2, mParty3, mParty4, mParty5, mParty6, mParty7, mParty8];
       const nums = arr.reduce((acc, num) => acc += Number(num.replace(/[^\d]/g, '')), 0);
       store.setState({ onMach: nums });
+      store.setState({ totalCarsParts: quantCars * nums})
     },
+
+
   }));
 };
 
