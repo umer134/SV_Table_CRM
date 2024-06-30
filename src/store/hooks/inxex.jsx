@@ -1,14 +1,17 @@
 import { create } from 'zustand';
 
-const useCalculateData = create((set) => ({
-    mParty1 : 0,
-    mParty2 : 0,
-    mParty3 : 0,
-    mParty4 : 0,
-    mParty5 : 0,
-    mParty6 : 0,
-    mParty7 : 0,
-    mParty8 : 0,
+// Создаем фабрику сторов
+
+const createRowStore = (index) => {
+  return create((set) => ({
+    mParty1: '',
+    mParty2: '',
+    mParty3: '',
+    mParty4: '',
+    mParty5: '',
+    mParty6: '',
+    mParty7: '',
+    mParty8: '',
     onMach: 0,
 
     setMParty1: (value) => set(() => ({ mParty1: value })),
@@ -20,16 +23,19 @@ const useCalculateData = create((set) => ({
     setMParty7: (value) => set(() => ({ mParty7: value })),
     setMParty8: (value) => set(() => ({ mParty8: value })),
 
-    calcOnMach : () => {
-        const str = `${useCalculateData.getState().mParty1}${useCalculateData.getState().mParty2}
-        ${useCalculateData.getState().mParty3}${useCalculateData.getState().mParty4}
-        ${useCalculateData.getState().mParty5}${useCalculateData.getState().mParty6}
-        ${useCalculateData.getState().mParty7}${useCalculateData.getState().mParty8}`;
-        const arr = str.split('');
-        const nums = arr.filter((char) => /^\d+$/.test(char)).map((char) => parseInt(char)).reduce((acc, num) => acc + num, 0);
-        set({ onMach: nums });
-    }
-}))
+    calcOnMach: (index) => {
+      const store = rowStores[index];
+      const { mParty1, mParty2, mParty3, mParty4, mParty5, mParty6, mParty7, mParty8 } = store.getState();
+      const arr = [mParty1, mParty2, mParty3, mParty4, mParty5, mParty6, mParty7, mParty8];
+      const nums = arr.reduce((acc, num) => acc += Number(num.replace(/[^\d]/g, '')), 0);
+      store.setState({ onMach: nums });
+    },
+  }));
+};
 
-export default useCalculateData;
+const rowStores = [];
+for (let i = 0; i < 20; i++) {
+  rowStores.push(createRowStore(i));
+}
 
+export default rowStores;

@@ -5,17 +5,22 @@ import FormTable from './components/FormTable'
 import FormBoxes from './components/FormBoxes'
 import FormInputs from './components/formInputs/FormInputs'
 
+
 function App() {
   
   const [tableRows, setTableRows] = useState(Array(18).fill())
+  const [start, setStart] = useState(false);
+
+
 
   return (
     <div className='App'>
-     <FormTable/>
+     <FormTable start={start} setStart={setStart} />
      <FormBoxes />
       {
-      tableRows?.map((_) => (
-          <FormInputs key={uuidv4()} />
+      tableRows?.map((_, index) => (
+          
+          <FormInputs key={index} index={index} start={start} setStart={setStart} />
       ))
      }
     </div>

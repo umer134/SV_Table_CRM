@@ -1,12 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./formInputs.css"
-import useCalculateData from "../../store/hooks/inxex";
+import rowStores from "../../store/hooks/inxex";
 
-const FormInputs = () => {
+const FormInputs = ({index, start, setStart}) => {
+    
+    const useCalculateData = rowStores[index];
+    const {mParty1, mParty2, mParty3, mParty4, mParty5, mParty6, mParty7, mParty8, onMach,
+    setMParty1, setMParty2, setMParty3, setMParty4, setMParty5, setMParty6,
+    setMParty7, setMParty8 } = useCalculateData();
+    
+    const calcAllOnMach = () => {
+        rowStores.forEach((store) => {
+          store.getState().calcOnMach(index);
+        });
+      };
 
-    const {mParty1, mParty2, mParty3, mParty4, mParty5, mParty6, mParty7, mParty8, onMach, 
-        setMParty1, setMParty2, setMParty3, setMParty4, setMParty5, setMParty6,
-        setMParty7, setMParty8} = useCalculateData()
+      useEffect(() => {
+        if (start === true) {
+          calcAllOnMach();
+          setStart(start = false);
+        }
+      }, [start]);
 
     const [quantTypes, setQuantTypes] = useState('');
     // const [mParty1, setMParty1] = useState('');
@@ -187,6 +201,7 @@ const FormInputs = () => {
                     <div name="formul-result" className="view-result"></div>
                 </div>
             </div>
+           
         </div>
      );
 }

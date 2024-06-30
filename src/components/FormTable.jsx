@@ -1,8 +1,6 @@
-import useCalculateData from "../store/hooks/inxex";
 
-const FormTable = () => {
 
-    const {calcOnMach} = useCalculateData()
+const FormTable = ({start, setStart}) => {
 
     return ( 
         <div className="FormTable">
@@ -23,7 +21,7 @@ const FormTable = () => {
                     </div>
                 </div>
                 <div className="btns-block">
-                    <button className="inp-formuls" onClick={calcOnMach}>вставить формулы</button>
+                    <button className="inp-formuls" onClick={()=> setStart(!start)}>вставить формулы</button>
                     <button className="inp-formuls">внести данные</button>
                     <button className="inp-formuls">очистить форму</button>
                 </div>
