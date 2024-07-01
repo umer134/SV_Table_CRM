@@ -12,7 +12,22 @@ const FormInputs = ({index, start, setStart}) => {
     pogMParty3, pogMParty4, pogMParty5, pogMParty6, pogMParty7,
     pogMParty8, setPogMParty1, setPogMParty2, setPogMParty3,
     setPogMParty4, setPogMParty5, setPogMParty6, setPogMParty7,
-    setPogMParty8, onCarPogM, totalCarPogM} = useCalculateData();
+    setPogMParty8, onCarPogM, totalCarPogM, rollsOnCar, totalRolls, _4_540x720_Shubnikov,   
+    _6_540x720_Shubnikov, _8_540x720_Shubnikov, _6_720x1080_Shubnikov, _8_720x1080_Shubnikov,   
+    _8_1440x1440_Shubnikov, _10_1440x1440_Shubnikov, _4_540x720_F106366, _6_540x720_F106366,      
+    _8_540x720_F106366, _6_720x1080_F106366, _8_720x1080_F106366, _6_720x1080_F108415,
+    _8_720x1080_F108415, _4_540x720_MaraJet,   _6_540x720_MaraJet,   _8_540x720_MaraJet, 
+    _6_720x1080_MaraJet, _8_720x1080_MaraJet,  _8_1440x1440_MaraJet, _10_1440x1440_MaraJet,   
+    _4_540x720_Yadrentsev, _6_540x720_Yadrentsev, _8_540x720_Yadrentsev, _6_720x1080_Yadrentsev,  
+    _8_720x1080_Yadrentsev, _8_1440x1440_Yadrentsev, _10_1440x1440_Yadrentsev,
+    _4_540x720_Marabu, _6_540x720_Marabu, _8_540x720_Marabu, _6_720x1080_Marabu,  _8_720x1080_Marabu,
+    _8_1440x1440_Marabu, _10_1440x1440_Marabu, A_4_540x720_F106366, A_6_540x720_F106366,
+    A_8_540x720_F106366, A_6_720x1080_F106366, A_8_720x1080_F106366, A_4_540x720_Marabu,
+    A_6_540x720_Marabu, A_8_540x720_Marabu, A_6_720x1080_Marabu, A_8_720x1080_Marabu, 
+    A_8_1440x1440_Marabu, A_10_1440x1440_Marabu, B_6_720x1080_F106366, B_8_720x1080_F106366,
+    B_4_540x720_Marabu, B_6_540x720_Marabu, B_8_540x720_Marabu, B_6_720x1080_Marabu, B_8_720x1080_Marabu, 
+    B_8_1440x1440_Marabu, B_10_1440x1440_Marabu, B_4_540x720_F106366, B_6_540x720_F106366, B_8_540x720_F106366,      
+    C_6_720x1080_F106366, C_8_720x1080_F106366} = useCalculateData();
     
     
     const calcAllOnMach = () => {
@@ -27,16 +42,21 @@ const FormInputs = ({index, start, setStart}) => {
         });
       };
 
+      const calcRolls = () => {
+        rowStores.forEach((store) => {
+          store.getState().calcRolls(index);
+        });
+      };
+
       useEffect(() => {
         if (start === true) {
           calcAllOnMach();
           calcPogMParts();
+          calcRolls();
           setStart(start = false);
         }
       }, [start]);
 
-    const [paryOnCarRes, setParyOnCarRes] = useState('');
-    const [quantAllres, setQuantAllRess] = useState('');
     const [timePrintRes, setTimePrintRes] = useState('');
     const [relaysRes, setRelaysRes] = useState('');
     const [timePrintRollRes, setTimePrintRollRes] = useState('');
@@ -72,8 +92,8 @@ const FormInputs = ({index, start, setStart}) => {
                 <div className="form-formul-values">
                     <div name="formul-result" className="on-car-result">{onCarPogM}</div>
                     <div name="formul-result" className="everything-result">{totalCarPogM}</div>
-                    <div name="formul-result" className="pary-on-car-result">{paryOnCarRes}</div>
-                    <div name="formul-result" className="quant-all-result">{quantAllres}</div>
+                    <div name="formul-result" className="pary-on-car-result">{rollsOnCar}</div>
+                    <div name="formul-result" className="quant-all-result">{totalRolls}</div>
                     <div name="formul-result" className="time-printing-result">{timePrintRes}</div>
                     <div name="formul-result" className="relays-result">{relaysRes}</div>
                     <div name="formul-result" className="time-printing-roll-result">{timePrintRollRes}</div>
@@ -125,67 +145,67 @@ const FormInputs = ({index, start, setStart}) => {
                         <option value="">Плоттер</option>
                     </select>
                     <select name="formul-result" className="profile-result">
-                        <option value="">4_540х720_Shubnikov</option>
-                        <option value="">6_540х720_Shubnikov</option>
-                        <option value="">8_540х720_Shubnikov</option>
-                        <option value="">6_720х1080_Shubnikov</option>
-                        <option value="">8_720х1080_Shubnikov</option>
-                        <option value="">8_1440х1440_Shubnikov</option>
-                        <option value="">10_1440х1440_Shubnikov</option>
-                        <option value="">4_540х720_F106366</option>
-                        <option value="">6_540х720_F106366</option>
-                        <option value="">8_540х720_F106366</option>
-                        <option value="">6_720х1080_F106366</option>
-                        <option value="">8_720х1080_F106366</option>
-                        <option value="">6_720х1080_F108415</option>
-                        <option value="">8_720х1080_F108415</option>
-                        <option value="">4_540х720_MaraJet</option>
-                        <option value="">6_540х720_MaraJet</option>
-                        <option value="">8_540х720_MaraJet</option>
-                        <option value="">6_720х1080_MaraJet</option>
-                        <option value="">8_720х1080_MaraJet</option>
-                        <option value="">8_1440х1440_MaraJet</option>
-                        <option value="">10_1440х1440_MaraJet</option>
-                        <option value="">4_540х720_Yadrentsev</option>
-                        <option value="">6_540х720_Yadrentsev</option>
-                        <option value="">8_540х720_Yadrentsev</option>
-                        <option value="">6_720х1080_Yadrentsev</option>
-                        <option value="">8_720х1080_Yadrentsev</option>
-                        <option value="">8_1440х1440_Yadrentsev</option>
-                        <option value="">10_1440х1440_Yadrentsev</option>
-                        <option value="">4_540х720_Marabu</option>
-                        <option value="">6_540х720_Marabu</option>
-                        <option value="">8_540х720_Marabu</option>
-                        <option value="">6_720х1080_Marabu</option>
-                        <option value="">8_720х1080_Marabu</option>
-                        <option value="">8_1440х1440_Marabu</option>
-                        <option value="">10_1440х1440_Marabu</option>
-                        <option value="">4_540х720_F106366</option>
-                        <option value="">6_540х720_F106366</option>
-                        <option value="">8_540х720_F106366</option>
-                        <option value="">6_720х1080_F106366</option>
-                        <option value="">8_720х1080_F106366</option>
-                        <option value="">4_540х720_Marabu</option>
-                        <option value="">6_540х720_Marabu</option>
-                        <option value="">8_540х720_Marabu</option>
-                        <option value="">6_720х1080_Marabu</option>
-                        <option value="">8_720х1080_Marabu</option>
-                        <option value="">8_1440х1440_Marabu</option>
-                        <option value="">10_1440х1440_Marabu</option>
-                        <option value="">6_720х1080_F106366</option>
-                        <option value="">8_720х1080_F106366</option>
-                        <option value="">4_540х720_Marabu</option>
-                        <option value="">6_540х720_Marabu</option>
-                        <option value="">8_540х720_Marabu</option>
-                        <option value="">6_720х1080_Marabu</option>
-                        <option value="">8_720х1080_Marabu</option>
-                        <option value="">8_1440х1440_Marabu</option>
-                        <option value="">10_1440х1440_Marabu</option>
-                        <option value="">4_540х720_F106366</option>
-                        <option value="">6_540х720_F106366</option>
-                        <option value="">8_540х720_F106366</option>
-                        <option value="">6_720х1080_F106366</option>
-                        <option value="">8_720х1080_F106366</option>
+                        <option value="">4_540x720_Shubnikov</option>
+                        <option value="">6_540x720_Shubnikov</option>
+                        <option value="">8_540x720_Shubnikov</option>
+                        <option value="">6_720x1080_Shubnikov</option>
+                        <option value="">8_720x1080_Shubnikov</option>
+                        <option value="">8_1440x1440_Shubnikov</option>
+                        <option value="">10_1440x1440_Shubnikov</option>
+                        <option value="">4_540x720_F106366</option>
+                        <option value="">6_540x720_F106366</option>
+                        <option value="">8_540x720_F106366</option>
+                        <option value="">6_720x1080_F106366</option>
+                        <option value="">8_720x1080_F106366</option>
+                        <option value="">6_720x1080_F108415</option>
+                        <option value="">8_720x1080_F108415</option>
+                        <option value="">4_540x720_MaraJet</option>
+                        <option value="">6_540x720_MaraJet</option>
+                        <option value="">8_540x720_MaraJet</option>
+                        <option value="">6_720x1080_MaraJet</option>
+                        <option value="">8_720x1080_MaraJet</option>
+                        <option value="">8_1440x1440_MaraJet</option>
+                        <option value="">10_1440x1440_MaraJet</option>
+                        <option value="">4_540x720_Yadrentsev</option>
+                        <option value="">6_540x720_Yadrentsev</option>
+                        <option value="">8_540x720_Yadrentsev</option>
+                        <option value="">6_720x1080_Yadrentsev</option>
+                        <option value="">8_720x1080_Yadrentsev</option>
+                        <option value="">8_1440x1440_Yadrentsev</option>
+                        <option value="">10_1440x1440_Yadrentsev</option>
+                        <option value="">4_540x720_Marabu</option>
+                        <option value="">6_540x720_Marabu</option>
+                        <option value="">8_540x720_Marabu</option>
+                        <option value="">6_720x1080_Marabu</option>
+                        <option value="">8_720x1080_Marabu</option>
+                        <option value="">8_1440x1440_Marabu</option>
+                        <option value="">10_1440x1440_Marabu</option>
+                        <option value="">4_540x720_F106366</option>
+                        <option value="">6_540x720_F106366</option>
+                        <option value="">8_540x720_F106366</option>
+                        <option value="">6_720x1080_F106366</option>
+                        <option value="">8_720x1080_F106366</option>
+                        <option value="">4_540x720_Marabu</option>
+                        <option value="">6_540x720_Marabu</option>
+                        <option value="">8_540x720_Marabu</option>
+                        <option value="">6_720x1080_Marabu</option>
+                        <option value="">8_720x1080_Marabu</option>
+                        <option value="">8_1440x1440_Marabu</option>
+                        <option value="">10_1440x1440_Marabu</option>
+                        <option value="">6_720x1080_F106366</option>
+                        <option value="">8_720x1080_F106366</option>
+                        <option value="">4_540x720_Marabu</option>
+                        <option value="">6_540x720_Marabu</option>
+                        <option value="">8_540x720_Marabu</option>
+                        <option value="">6_720x1080_Marabu</option>
+                        <option value="">8_720x1080_Marabu</option>
+                        <option value="">8_1440x1440_Marabu</option>
+                        <option value="">10_1440x1440_Marabu</option>
+                        <option value="">4_540x720_F106366</option>
+                        <option value="">6_540x720_F106366</option>
+                        <option value="">8_540x720_F106366</option>
+                        <option value="">6_720x1080_F106366</option>
+                        <option value="">8_720x1080_F106366</option>
                     </select>
                     <div name="formul-result" className="color-settings-result"></div>
                     <div name="formul-result" className="montage-result"></div>

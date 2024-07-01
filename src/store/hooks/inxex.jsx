@@ -5,7 +5,7 @@ import { create } from 'zustand';
 const createRowStore = (index) => {
   return create((set) => ({
 
-    //колво однотипных машин, обозначение и колво однотипных частей на машину
+    //колво однотипныx машин, обозначение и колво однотипныx частей на машину
 
     quantCars: '',
     totalCarsParts: '',
@@ -64,7 +64,7 @@ const createRowStore = (index) => {
 
     calcPogM: (index) => {
       const store = rowStores[index];
-      //нужно переменные mParty очистить от нечисловых элементов и распарсить в числовой тип
+      //нужно переменные mParty очистить от нечисловыx элементов и распарсить в числовой тип
       const { pogMParty1, pogMParty2, pogMParty3, pogMParty4, pogMParty5, pogMParty6, pogMParty7, pogMParty8,
             mParty1, mParty2, mParty3, mParty4, mParty5, mParty6, mParty7, mParty8, quantCars } = store.getState();
 
@@ -93,9 +93,78 @@ const createRowStore = (index) => {
 
     calcRolls: (index) => {
       const store = rowStores[index];
-      const {totalCarPogM} = store.getState();
-      store.setState({ totalRolls: totalCarPogM })
-    }
+      const {quantCars, onCarPogM, onMach} = store.getState();
+      const rollsCarRes = (onCarPogM / (50 - 0.4 - (0.04 * (onMach - 1)) - 0.1)).toFixed(2);
+      console.log(rollsCarRes)
+      if(!onMach == 0) store.setState({ rollsOnCar: rollsCarRes })
+        store.setState({totalRolls: (rollsCarRes * quantCars)})
+    },
+
+    //=============
+
+    //время печати заказа 
+
+   _4_540x720_Shubnikov:    '4_540x720_Shubnikov',
+   _6_540x720_Shubnikov:    '6_540x720_Shubnikov',
+   _8_540x720_Shubnikov:    '8_540x720_Shubnikov',
+   _6_720x1080_Shubnikov:   '6_720x1080_Shubnikov',
+   _8_720x1080_Shubnikov:   '8_720x1080_Shubnikov',
+   _8_1440x1440_Shubnikov:    '8_1440x1440_Shubnikov',
+   _10_1440x1440_Shubnikov:  '10_1440x1440_Shubnikov',
+   _4_540x720_F106366:       '4_540x720_F106366',
+   _6_540x720_F106366:       '6_540x720_F106366',
+   _8_540x720_F106366:       '8_540x720_F106366',
+   _6_720x1080_F106366:      '6_720x1080_F106366',
+   _8_720x1080_F106366:      '8_720x1080_F106366',
+   _6_720x1080_F108415:      '6_720x1080_F108415',
+   _8_720x1080_F108415:      '8_720x1080_F108415',
+   _4_540x720_MaraJet:       '4_540x720_MaraJet',
+   _6_540x720_MaraJet:       '6_540x720_MaraJet',
+   _8_540x720_MaraJet:       '8_540x720_MaraJet',
+   _6_720x1080_MaraJet:      '6_720x1080_MaraJet',
+   _8_720x1080_MaraJet:      '8_720x1080_MaraJet',
+   _8_1440x1440_MaraJet:     '8_1440x1440_MaraJet',
+   _10_1440x1440_MaraJet:    '10_1440x1440_MaraJet',
+   _4_540x720_Yadrentsev:     '4_540x720_Yadrentsev',
+   _6_540x720_Yadrentsev:     '6_540x720_Yadrentsev',
+   _8_540x720_Yadrentsev:     '8_540x720_Yadrentsev',
+   _6_720x1080_Yadrentsev:    '6_720x1080_Yadrentsev',
+   _8_720x1080_Yadrentsev:    '8_720x1080_Yadrentsev',
+   _8_1440x1440_Yadrentsev:   '8_1440x1440_Yadrentsev',
+   _10_1440x1440_Yadrentsev:  '10_1440x1440_Yadrentsev',
+   _4_540x720_Marabu:         '4_540x720_Marabu',
+   _6_540x720_Marabu:         '6_540x720_Marabu',
+   _8_540x720_Marabu:         '8_540x720_Marabu',
+   _6_720x1080_Marabu:        '6_720x1080_Marabu',
+   _8_720x1080_Marabu:        '8_720x1080_Marabu',
+   _8_1440x1440_Marabu:       '8_1440x1440_Marabu',
+   _10_1440x1440_Marabu:      '10_1440x1440_Marabu',
+   A_4_540x720_F106366:          '4_540x720_F106366',
+   A_6_540x720_F106366:        '6_540x720_F106366',
+   A_8_540x720_F106366:        '8_540x720_F106366',
+   A_6_720x1080_F106366:       '6_720x1080_F106366',
+   A_8_720x1080_F106366:       '8_720x1080_F106366',
+   A_4_540x720_Marabu:         '4_540x720_Marabu',
+   A_6_540x720_Marabu:         '6_540x720_Marabu',
+   A_8_540x720_Marabu:         '8_540x720_Marabu',
+   A_6_720x1080_Marabu:        '6_720x1080_Marabu',
+   A_8_720x1080_Marabu:        '8_720x1080_Marabu',
+   A_8_1440x1440_Marabu:       '8_1440x1440_Marabu',
+   A_10_1440x1440_Marabu:      '10_1440x1440_Marabu',
+   B_6_720x1080_F106366:       '6_720x1080_F106366',
+   B_8_720x1080_F106366:         '8_720x1080_F106366',
+   B_4_540x720_Marabu:       '4_540x720_Marabu',
+   B_6_540x720_Marabu:       '6_540x720_Marabu',
+   B_8_540x720_Marabu:       '8_540x720_Marabu',
+   B_6_720x1080_Marabu:      '6_720x1080_Marabu',
+   B_8_720x1080_Marabu:        '8_720x1080_Marabu',
+   B_8_1440x1440_Marabu:       '8_1440x1440_Marabu',
+   B_10_1440x1440_Marabu:      '10_1440x1440_Marabu',
+   B_4_540x720_F106366:        '4_540x720_F106366',
+   B_6_540x720_F106366:      '6_540x720_F106366',
+   B_8_540x720_F106366:      '8_540x720_F106366',
+   C_6_720x1080_F106366:     '6_720x1080_F106366',
+   C_8_720x1080_F106366:     '8_720x1080_F106366',
 
   }));
 };

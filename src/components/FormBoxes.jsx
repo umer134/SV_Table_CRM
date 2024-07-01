@@ -5,9 +5,9 @@ const FormBoxes = () => {
                 <div className="proj-name">Наименование проекта</div>
                 <div className="city">Город</div>
                 <div className="type-machine">Вид машины</div>
-                <div className="quantity-machines">Кол-во одно- <br/> типных машин</div>
+                <div className="quantity-machines">Кол-во одно- <br/> типныx машин</div>
                 <div className="quantity-machine-partyes">
-                            <p>Обозначение и кол-во однотипных частей на машину</p>
+                            <p>Обозначение и кол-во однотипныx частей на машину</p>
                             <div className="list">
                             <div className="mach-party">1</div>
                             <div className="mach-party">2</div>
