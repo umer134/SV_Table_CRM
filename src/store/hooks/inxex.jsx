@@ -103,7 +103,12 @@ const createRowStore = (index) => {
     //=============
 
     //время печати заказа 
-
+    timePrintResult: '',
+    relaysResult: '',
+    rollPrintingTime: '',
+    selectOption: '',
+    setSelectOption: (value) => set(() => ({ selectOption : value })),
+  
    _4_540x720_Shubnikov:    '4_540x720_Shubnikov',
    _6_540x720_Shubnikov:    '6_540x720_Shubnikov',
    _8_540x720_Shubnikov:    '8_540x720_Shubnikov',
@@ -165,6 +170,271 @@ const createRowStore = (index) => {
    B_8_540x720_F106366:      '8_540x720_F106366',
    C_6_720x1080_F106366:     '6_720x1080_F106366',
    C_8_720x1080_F106366:     '8_720x1080_F106366',
+
+
+    calcTimeRollPrint: (index) => {
+    const store = rowStores[index];
+
+    const {rollPrintingTime,
+      timePrintResult,
+      totalRolls,
+      selectOption,
+       _4_540x720_Shubnikov, 
+      _6_540x720_Shubnikov,   
+      _8_540x720_Shubnikov,   
+      _6_720x1080_Shubnikov,  
+      _8_720x1080_Shubnikov,  
+      _8_1440x1440_Shubnikov, 
+      _10_1440x1440_Shubnikov,
+      _4_540x720_F106366,     
+      _6_540x720_F106366,     
+      _8_540x720_F106366,     
+      _6_720x1080_F106366,    
+      _8_720x1080_F106366,    
+      _6_720x1080_F108415,    
+      _8_720x1080_F108415,    
+      _4_540x720_MaraJet,     
+      _6_540x720_MaraJet,     
+      _8_540x720_MaraJet,     
+      _6_720x1080_MaraJet,    
+      _8_720x1080_MaraJet,    
+      _8_1440x1440_MaraJet,   
+      _10_1440x1440_MaraJet,  
+      _4_540x720_Yadrentsev,  
+      _6_540x720_Yadrentsev,  
+      _8_540x720_Yadrentsev,  
+      _6_720x1080_Yadrentsev, 
+      _8_720x1080_Yadrentsev, 
+      _8_1440x1440_Yadrentsev,
+      _10_1440x1440_Yadrentsev,
+      _4_540x720_Marabu,      
+      _6_540x720_Marabu,      
+      _8_540x720_Marabu,      
+      _6_720x1080_Marabu,     
+      _8_720x1080_Marabu,     
+      _8_1440x1440_Marabu,    
+      _10_1440x1440_Marabu,   
+      A_4_540x720_F106366,    
+      A_6_540x720_F106366,    
+      A_8_540x720_F106366,    
+      A_6_720x1080_F106366,   
+      A_8_720x1080_F106366,   
+      A_4_540x720_Marabu,     
+      A_6_540x720_Marabu,     
+      A_8_540x720_Marabu,     
+      A_6_720x1080_Marabu,    
+      A_8_720x1080_Marabu,    
+      A_8_1440x1440_Marabu,   
+      A_10_1440x1440_Marabu,  
+      B_6_720x1080_F106366,   
+      B_8_720x1080_F106366,   
+      B_4_540x720_Marabu,     
+      B_6_540x720_Marabu,     
+      B_8_540x720_Marabu,     
+      B_6_720x1080_Marabu,    
+      B_8_720x1080_Marabu,    
+      B_8_1440x1440_Marabu,   
+      B_10_1440x1440_Marabu,  
+      B_4_540x720_F106366,    
+      B_6_540x720_F106366,    
+      B_8_540x720_F106366,    
+      C_6_720x1080_F106366,   
+      C_8_720x1080_F106366,   } = store.getState();
+
+      switch (selectOption) {
+        case _4_540x720_Shubnikov :
+        store.setState({rollPrintingTime: 3})
+        break;
+        case _6_540x720_Shubnikov :
+        store.setState({rollPrintingTime: 4.1})
+        break;
+        case _8_540x720_Shubnikov :
+        store.setState({rollPrintingTime: 5.1})
+        break;
+        case _6_720x1080_Shubnikov :
+        store.setState({rollPrintingTime: 4.6})
+        break;
+        case _8_720x1080_Shubnikov :
+        store.setState({rollPrintingTime: 6.1})
+        break;
+        case _8_1440x1440_Shubnikov :
+        store.setState({rollPrintingTime: 10})
+        break;
+        case _10_1440x1440_Shubnikov :
+        store.setState({rollPrintingTime: 12})
+        break;
+        case _4_540x720_F106366 :
+        store.setState({rollPrintingTime: 3})
+        break;
+        case _6_540x720_F106366 :
+        store.setState({rollPrintingTime: 4.1})
+        break;
+        case _8_540x720_F106366 :
+        store.setState({rollPrintingTime: 5.1})
+        break;
+        case _6_720x1080_F106366 :
+        store.setState({rollPrintingTime: 4.6})
+        break;
+        case _8_720x1080_F106366 :
+        store.setState({rollPrintingTime: 6.1})
+        break;
+        case _6_720x1080_F108415 :
+        store.setState({rollPrintingTime: 4.6})
+        break;
+        case _8_720x1080_F108415 :
+        store.setState({rollPrintingTime: 6.1})
+        break;
+        case _4_540x720_MaraJet :
+        store.setState({rollPrintingTime: 3})
+        break;
+        case _6_540x720_MaraJet :
+        store.setState({rollPrintingTime: 4.1})
+        break;
+        case _8_540x720_MaraJet :
+        store.setState({rollPrintingTime: 5.1})
+        break;
+        case _6_720x1080_MaraJet :
+        store.setState({rollPrintingTime: 4.6})
+        break;
+        case _8_720x1080_MaraJet :
+        store.setState({rollPrintingTime: 6.1})
+        break;
+        case _8_1440x1440_MaraJet :
+        store.setState({rollPrintingTime: 10})
+        break;
+        case _10_1440x1440_MaraJet :
+        store.setState({rollPrintingTime: 12})
+        break;
+        case _4_540x720_Yadrentsev :
+        store.setState({rollPrintingTime: 3})
+        break;
+        case _6_540x720_Yadrentsev :
+        store.setState({rollPrintingTime: 4.1})
+        break;
+        case _8_540x720_Yadrentsev :
+        store.setState({rollPrintingTime: 5.1})
+        break;
+        case _6_720x1080_Yadrentsev :
+        store.setState({rollPrintingTime: 4.6})
+        break;
+        case _8_720x1080_Yadrentsev :
+        store.setState({rollPrintingTime: 6.1})
+        break;
+        case _8_1440x1440_Yadrentsev :
+        store.setState({rollPrintingTime: 10})
+        break;
+        case _10_1440x1440_Yadrentsev :
+        store.setState({rollPrintingTime: 12})
+        break;
+        case _4_540x720_Marabu :
+        store.setState({rollPrintingTime: 3})
+        break;
+        case _6_540x720_Marabu :
+        store.setState({rollPrintingTime: 4.1})
+        break;
+        case _8_540x720_Marabu :
+        store.setState({rollPrintingTime: 5.1})
+        break;
+        case _6_720x1080_Marabu :
+        store.setState({rollPrintingTime: 4.6})
+        break;
+        case _8_720x1080_Marabu :
+        store.setState({rollPrintingTime: 6.1})
+        break;
+        case _8_1440x1440_Marabu :
+        store.setState({rollPrintingTime: 10})
+        break;
+        case _10_1440x1440_Marabu :
+        store.setState({rollPrintingTime: 12})
+        break;
+        case A_4_540x720_F106366 :
+        store.setState({rollPrintingTime: 3})
+        break;
+        case A_6_540x720_F106366 :
+        store.setState({rollPrintingTime: 4.1})
+        break;
+        case A_8_540x720_F106366 :
+        store.setState({rollPrintingTime: 5.1})
+        break;
+        case A_6_720x1080_F106366 :
+        store.setState({rollPrintingTime: 4.6})
+        break;
+        case A_8_720x1080_F106366 :
+        store.setState({rollPrintingTime: 6.1})
+        break;
+        case A_4_540x720_Marabu :
+        store.setState({rollPrintingTime: 3})
+        break;
+        case A_6_540x720_Marabu :
+        store.setState({rollPrintingTime: 4.1})
+        break;
+        case A_8_540x720_Marabu :
+        store.setState({rollPrintingTime: 5.1})
+        break;
+        case A_6_720x1080_Marabu :
+        store.setState({rollPrintingTime: 4.6})
+        break;
+        case A_8_720x1080_Marabu :
+        store.setState({rollPrintingTime: 6.1})
+        break;
+        case A_8_1440x1440_Marabu :
+        store.setState({rollPrintingTime: 10})
+        break;
+        case A_10_1440x1440_Marabu :
+        store.setState({rollPrintingTime: 12})
+        break;
+        case B_6_720x1080_F106366 :
+        store.setState({rollPrintingTime: 4.6})
+        break;
+        case B_8_720x1080_F106366 :
+        store.setState({rollPrintingTime: 6.1})
+        break;
+        case B_4_540x720_Marabu :
+        store.setState({rollPrintingTime: 3})
+        break;
+        case B_6_540x720_Marabu :
+        store.setState({rollPrintingTime: 4.1})
+        break;
+        case B_8_540x720_Marabu :
+        store.setState({rollPrintingTime: 5.1})
+        break;
+        case B_6_720x1080_Marabu :
+        store.setState({rollPrintingTime: 4.6})
+        break;
+        case B_8_720x1080_Marabu :
+        store.setState({rollPrintingTime: 6.1})
+        break;
+        case B_8_1440x1440_Marabu :
+        store.setState({rollPrintingTime: 10})
+        break;
+        case B_10_1440x1440_Marabu :
+        store.setState({rollPrintingTime: 12})
+        break;
+        case B_4_540x720_F106366 :
+        store.setState({rollPrintingTime: 3})
+        break;
+        case B_6_540x720_F106366 :
+        store.setState({rollPrintingTime: 4.1})
+        break;
+        case B_8_540x720_F106366 :
+        store.setState({rollPrintingTime: 5.1})
+        break;
+        case C_6_720x1080_F106366 :
+        store.setState({rollPrintingTime: 4.6})
+        break;
+        case C_8_720x1080_F106366 :
+        store.setState({rollPrintingTime: 6.1})
+        break;
+
+        default: 
+        store.setState({rollPrintingTime: 3})
+      }
+
+      store.setState({timePrintResult: (rollPrintingTime * totalRolls).toFixed(2) });
+      store.setState( {relaysResult: (timePrintResult / 10).toFixed(2)} )
+  }
+
+
 
   }));
 };

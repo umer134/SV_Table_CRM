@@ -5,16 +5,18 @@ import rowStores from "../../store/hooks/inxex";
 const FormInputs = ({index, start, setStart}) => {
 
     const useCalculateData = rowStores[index];
-    const {quantCars, setQuantCars, totalCarsParts, mParty1, mParty2,
+    const { mParty1, mParty2,
     mParty3, mParty4,mParty5, mParty6, mParty7, mParty8, onMach,
     setMParty1, setMParty2, setMParty3, setMParty4, setMParty5, 
     setMParty6, setMParty7, setMParty8, pogMParty1, pogMParty2,
     pogMParty3, pogMParty4, pogMParty5, pogMParty6, pogMParty7,
     pogMParty8, setPogMParty1, setPogMParty2, setPogMParty3,
     setPogMParty4, setPogMParty5, setPogMParty6, setPogMParty7,
-    setPogMParty8, onCarPogM, totalCarPogM, rollsOnCar, totalRolls, _4_540x720_Shubnikov,   
-    _6_540x720_Shubnikov, _8_540x720_Shubnikov, _6_720x1080_Shubnikov, _8_720x1080_Shubnikov,   
-    _8_1440x1440_Shubnikov, _10_1440x1440_Shubnikov, _4_540x720_F106366, _6_540x720_F106366,      
+    setPogMParty8, onCarPogM, totalCarPogM, rollsOnCar, totalRolls,
+    rollPrintingTime, selectOption, setSelectOption, timePrintResult,
+    relaysResult, quantCars, setQuantCars, totalCarsParts, 
+    _4_540x720_Shubnikov, _6_540x720_Shubnikov, _8_540x720_Shubnikov, _6_720x1080_Shubnikov,
+    _8_720x1080_Shubnikov, _8_1440x1440_Shubnikov, _10_1440x1440_Shubnikov, _4_540x720_F106366, _6_540x720_F106366,      
     _8_540x720_F106366, _6_720x1080_F106366, _8_720x1080_F106366, _6_720x1080_F108415,
     _8_720x1080_F108415, _4_540x720_MaraJet,   _6_540x720_MaraJet,   _8_540x720_MaraJet, 
     _6_720x1080_MaraJet, _8_720x1080_MaraJet,  _8_1440x1440_MaraJet, _10_1440x1440_MaraJet,   
@@ -28,7 +30,6 @@ const FormInputs = ({index, start, setStart}) => {
     B_4_540x720_Marabu, B_6_540x720_Marabu, B_8_540x720_Marabu, B_6_720x1080_Marabu, B_8_720x1080_Marabu, 
     B_8_1440x1440_Marabu, B_10_1440x1440_Marabu, B_4_540x720_F106366, B_6_540x720_F106366, B_8_540x720_F106366,      
     C_6_720x1080_F106366, C_8_720x1080_F106366} = useCalculateData();
-    
     
     const calcAllOnMach = () => {
         rowStores.forEach((store) => {
@@ -48,19 +49,21 @@ const FormInputs = ({index, start, setStart}) => {
         });
       };
 
+      const calcRollPrintingTime = () => {
+        rowStores.forEach((store) => {
+          store.getState().calcTimeRollPrint(index);
+        });
+      };
+
       useEffect(() => {
         if (start === true) {
           calcAllOnMach();
           calcPogMParts();
           calcRolls();
+          calcRollPrintingTime();
           setStart(start = false);
         }
       }, [start]);
-
-    const [timePrintRes, setTimePrintRes] = useState('');
-    const [relaysRes, setRelaysRes] = useState('');
-    const [timePrintRollRes, setTimePrintRollRes] = useState('');
-    
 
     return ( 
         <div className="FormInputs">
@@ -94,9 +97,9 @@ const FormInputs = ({index, start, setStart}) => {
                     <div name="formul-result" className="everything-result">{totalCarPogM}</div>
                     <div name="formul-result" className="pary-on-car-result">{rollsOnCar}</div>
                     <div name="formul-result" className="quant-all-result">{totalRolls}</div>
-                    <div name="formul-result" className="time-printing-result">{timePrintRes}</div>
-                    <div name="formul-result" className="relays-result">{relaysRes}</div>
-                    <div name="formul-result" className="time-printing-roll-result">{timePrintRollRes}</div>
+                    <div name="formul-result" className="time-printing-result">{timePrintResult}</div>
+                    <div name="formul-result" className="relays-result">{relaysResult}</div>
+                    <div name="formul-result" className="time-printing-roll-result">{rollPrintingTime}</div>
                     <div name="formul-result" className="checking-result"></div>
                     <select name="formul-result" className="material-result">
                         <option value="">3640 M010 1.05</option>
@@ -144,68 +147,68 @@ const FormInputs = ({index, start, setStart}) => {
                         <option value="">300</option>
                         <option value="">Плоттер</option>
                     </select>
-                    <select name="formul-result" className="profile-result">
-                        <option value="">4_540x720_Shubnikov</option>
-                        <option value="">6_540x720_Shubnikov</option>
-                        <option value="">8_540x720_Shubnikov</option>
-                        <option value="">6_720x1080_Shubnikov</option>
-                        <option value="">8_720x1080_Shubnikov</option>
-                        <option value="">8_1440x1440_Shubnikov</option>
-                        <option value="">10_1440x1440_Shubnikov</option>
-                        <option value="">4_540x720_F106366</option>
-                        <option value="">6_540x720_F106366</option>
-                        <option value="">8_540x720_F106366</option>
-                        <option value="">6_720x1080_F106366</option>
-                        <option value="">8_720x1080_F106366</option>
-                        <option value="">6_720x1080_F108415</option>
-                        <option value="">8_720x1080_F108415</option>
-                        <option value="">4_540x720_MaraJet</option>
-                        <option value="">6_540x720_MaraJet</option>
-                        <option value="">8_540x720_MaraJet</option>
-                        <option value="">6_720x1080_MaraJet</option>
-                        <option value="">8_720x1080_MaraJet</option>
-                        <option value="">8_1440x1440_MaraJet</option>
-                        <option value="">10_1440x1440_MaraJet</option>
-                        <option value="">4_540x720_Yadrentsev</option>
-                        <option value="">6_540x720_Yadrentsev</option>
-                        <option value="">8_540x720_Yadrentsev</option>
-                        <option value="">6_720x1080_Yadrentsev</option>
-                        <option value="">8_720x1080_Yadrentsev</option>
-                        <option value="">8_1440x1440_Yadrentsev</option>
-                        <option value="">10_1440x1440_Yadrentsev</option>
-                        <option value="">4_540x720_Marabu</option>
-                        <option value="">6_540x720_Marabu</option>
-                        <option value="">8_540x720_Marabu</option>
-                        <option value="">6_720x1080_Marabu</option>
-                        <option value="">8_720x1080_Marabu</option>
-                        <option value="">8_1440x1440_Marabu</option>
-                        <option value="">10_1440x1440_Marabu</option>
-                        <option value="">4_540x720_F106366</option>
-                        <option value="">6_540x720_F106366</option>
-                        <option value="">8_540x720_F106366</option>
-                        <option value="">6_720x1080_F106366</option>
-                        <option value="">8_720x1080_F106366</option>
-                        <option value="">4_540x720_Marabu</option>
-                        <option value="">6_540x720_Marabu</option>
-                        <option value="">8_540x720_Marabu</option>
-                        <option value="">6_720x1080_Marabu</option>
-                        <option value="">8_720x1080_Marabu</option>
-                        <option value="">8_1440x1440_Marabu</option>
-                        <option value="">10_1440x1440_Marabu</option>
-                        <option value="">6_720x1080_F106366</option>
-                        <option value="">8_720x1080_F106366</option>
-                        <option value="">4_540x720_Marabu</option>
-                        <option value="">6_540x720_Marabu</option>
-                        <option value="">8_540x720_Marabu</option>
-                        <option value="">6_720x1080_Marabu</option>
-                        <option value="">8_720x1080_Marabu</option>
-                        <option value="">8_1440x1440_Marabu</option>
-                        <option value="">10_1440x1440_Marabu</option>
-                        <option value="">4_540x720_F106366</option>
-                        <option value="">6_540x720_F106366</option>
-                        <option value="">8_540x720_F106366</option>
-                        <option value="">6_720x1080_F106366</option>
-                        <option value="">8_720x1080_F106366</option>
+                    <select name="formul-result" className="profile-result" value={selectOption} onChange={(e) => setSelectOption(e.target.value)}>
+                        <option value={_4_540x720_Shubnikov}>{_4_540x720_Shubnikov}</option>
+                        <option value={_6_540x720_Shubnikov}>{_6_540x720_Shubnikov}</option>
+                        <option value={_8_540x720_Shubnikov}>{_8_540x720_Shubnikov}</option>
+                        <option value={_6_720x1080_Shubnikov}>{_6_720x1080_Shubnikov}</option>
+                        <option value={_8_720x1080_Shubnikov}>{_8_720x1080_Shubnikov}</option>
+                        <option value={_8_1440x1440_Shubnikov}>{_8_1440x1440_Shubnikov}</option>
+                        <option value={_10_1440x1440_Shubnikov}>{_10_1440x1440_Shubnikov}</option>
+                        <option value={_4_540x720_F106366}>{_4_540x720_F106366}</option>
+                        <option value={_6_540x720_F106366}>{_6_540x720_F106366}</option>
+                        <option value={_8_540x720_F106366}>{_8_540x720_F106366}</option>
+                        <option value={_6_720x1080_F106366}>{_6_720x1080_F106366}</option>
+                        <option value={_8_720x1080_F106366}>{_8_720x1080_F106366}</option>
+                        <option value={_6_720x1080_F108415}>{_6_720x1080_F108415}</option>
+                        <option value={_8_720x1080_F108415}>{_8_720x1080_F108415}</option>
+                        <option value={_4_540x720_MaraJet}>{_4_540x720_MaraJet}</option>
+                        <option value={_6_540x720_MaraJet}>{_6_540x720_MaraJet}</option>
+                        <option value={_8_540x720_MaraJet}>{_8_540x720_MaraJet}</option>
+                        <option value={_6_720x1080_MaraJet}>{_6_720x1080_MaraJet}</option>
+                        <option value={_8_720x1080_MaraJet}>{_8_720x1080_MaraJet}</option>
+                        <option value={_8_1440x1440_MaraJet}>{_8_1440x1440_MaraJet}</option>
+                        <option value={_10_1440x1440_MaraJet}>{_10_1440x1440_MaraJet}</option>
+                        <option value={_4_540x720_Yadrentsev}>{_4_540x720_Yadrentsev}</option>
+                        <option value={_6_540x720_Yadrentsev}>{_6_540x720_Yadrentsev}</option>
+                        <option value={_8_540x720_Yadrentsev}>{_8_540x720_Yadrentsev}</option>
+                        <option value={_6_720x1080_Yadrentsev}>{_6_720x1080_Yadrentsev}</option>
+                        <option value={_8_720x1080_Yadrentsev}>{_8_720x1080_Yadrentsev}</option>
+                        <option value={_8_1440x1440_Yadrentsev}>{_8_1440x1440_Yadrentsev}</option>
+                        <option value={_10_1440x1440_Yadrentsev}>{_10_1440x1440_Yadrentsev}</option>
+                        <option value={_4_540x720_Marabu}>{_4_540x720_Marabu}</option>
+                        <option value={_6_540x720_Marabu}>{_6_540x720_Marabu}</option>
+                        <option value={_8_540x720_Marabu}>{_8_540x720_Marabu}</option>
+                        <option value={_6_720x1080_Marabu}>{_6_720x1080_Marabu}</option>
+                        <option value={_8_720x1080_Marabu}>{_8_720x1080_Marabu}</option>
+                        <option value={_8_1440x1440_Marabu}>{_8_1440x1440_Marabu}</option>
+                        <option value={_10_1440x1440_Marabu}>{_10_1440x1440_Marabu}</option>
+                        <option value={A_4_540x720_F106366}>{A_4_540x720_F106366}</option>
+                        <option value={A_6_540x720_F106366}>{A_6_540x720_F106366}</option>
+                        <option value={A_8_540x720_F106366}>{A_8_540x720_F106366}</option>
+                        <option value={A_6_720x1080_F106366}>{A_6_720x1080_F106366}</option>
+                        <option value={A_8_720x1080_F106366}>{A_8_720x1080_F106366}</option>
+                        <option value={A_4_540x720_Marabu}>{A_4_540x720_Marabu}</option>
+                        <option value={A_6_540x720_Marabu}>{A_6_540x720_Marabu}</option>
+                        <option value={A_8_540x720_Marabu}>{A_8_540x720_Marabu}</option>
+                        <option value={A_6_720x1080_Marabu}>{A_6_720x1080_Marabu}</option>
+                        <option value={A_8_720x1080_Marabu}>{A_8_720x1080_Marabu}</option>
+                        <option value={A_8_1440x1440_Marabu}>{A_8_1440x1440_Marabu}</option>
+                        <option value={A_10_1440x1440_Marabu}>{A_10_1440x1440_Marabu}</option>
+                        <option value={B_6_720x1080_F106366}>{B_6_720x1080_F106366}</option>
+                        <option value={B_8_720x1080_F106366}>{B_8_720x1080_F106366}</option>
+                        <option value={B_4_540x720_Marabu}>{B_4_540x720_Marabu}</option>
+                        <option value={B_6_540x720_Marabu}>{B_6_540x720_Marabu}</option>
+                        <option value={B_8_540x720_Marabu}>{B_8_540x720_Marabu}</option>
+                        <option value={B_6_720x1080_Marabu}>{B_6_720x1080_Marabu}</option>
+                        <option value={B_8_720x1080_Marabu}>{B_8_720x1080_Marabu}</option>
+                        <option value={B_8_1440x1440_Marabu}>{B_8_1440x1440_Marabu}</option>
+                        <option value={B_10_1440x1440_Marabu}>{B_10_1440x1440_Marabu}</option>
+                        <option value={B_4_540x720_F106366}>{B_4_540x720_F106366}</option>
+                        <option value={B_6_540x720_F106366}>{B_6_540x720_F106366}</option>
+                        <option value={B_8_540x720_F106366}>{B_8_540x720_F106366}</option>
+                        <option value={C_6_720x1080_F106366}>{C_6_720x1080_F106366}</option>
+                        <option value={C_8_720x1080_F106366}>{C_8_720x1080_F106366}</option>
                     </select>
                     <div name="formul-result" className="color-settings-result"></div>
                     <div name="formul-result" className="montage-result"></div>
