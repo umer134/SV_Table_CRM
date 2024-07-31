@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import "./formInputs.css"
 import rowStores from "../../store/hooks/inxex";
 

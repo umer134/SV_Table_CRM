@@ -4,9 +4,44 @@
   padding: 0;
 }
 
+
 body {
-  transform: scale(0.8);
-  transform-origin: top left;
+  height: 100%;
+  width: 100%;
+ transform: scale(0.8);
+  transform-origin: top left;  
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Учитываем масштаб */
+  transform: scale(1.25);
+  transform-origin: top left; 
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.footer{
+  background: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+
+}
+
+.main-form{
+ flex: 1;
+ margin-top: 320px;
+ margin-bottom: 40px;
+ overflow-y: scroll;
+ overflow-x: hidden;
+ min-width: 137%;
+ max-height: 450px;
 }
 
 .FormTable .container{
@@ -35,11 +70,14 @@ h4{
   align-items: center;
 }
 
-p{
+.FormTable .container h4 p{
   border-left: 1px solid black;
-  padding: 0  10px;
+  padding: 0px  2px;
+  text-align: center;
   margin-left: 10px;
-  font-size: 24px;
+  font-size: 15px;
+  min-width: 28px;
+  max-width: 28px;
 }
 
 .time{
@@ -75,14 +113,13 @@ p{
 
 /* ==================================== */
 
-
-
 .form-boxes {
   margin-top: 50px;
   margin-left: 40px;
 }
 
 .form-boxes .container div{
+  
   background: rgb(151, 223, 151);
 }
 

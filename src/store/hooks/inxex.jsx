@@ -239,7 +239,7 @@ const createRowStore = (index) => {
       B_6_540x720_F106366,    
       B_8_540x720_F106366,    
       C_6_720x1080_F106366,   
-      C_8_720x1080_F106366,   } = store.getState();
+      C_8_720x1080_F106366, } = store.getState();
 
       switch (selectOption) {
         case _4_540x720_Shubnikov :
@@ -434,8 +434,6 @@ const createRowStore = (index) => {
       store.setState( {relaysResult: (timePrintResult / 10).toFixed(2)} )
   }
 
-
-
   }));
 };
 
@@ -443,7 +441,7 @@ const createRowStore = (index) => {
   
 
 const rowStores = [];
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 60; i++) {
   rowStores.push(createRowStore(i));
 }
 
