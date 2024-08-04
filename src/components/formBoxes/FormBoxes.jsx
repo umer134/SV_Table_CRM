@@ -1,3 +1,6 @@
+
+import  "./formBoxes.css"
+
 const FormBoxes = () => {
     return ( 
         <div className="form-boxes">

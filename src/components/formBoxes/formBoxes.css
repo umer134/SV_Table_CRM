@@ -1,0 +1,209 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.form-boxes {
+    margin-top: 50px;
+    margin-left: 40px;
+  }
+  
+  .form-boxes .container {
+    transform: scale(0.8);
+    transform-origin: top left; 
+  }
+
+  .form-boxes .container div{
+    
+    background: rgb(151, 223, 151);
+  }
+  
+  .proj-name, 
+  .city, .type-machine, 
+  .quantity-machines, 
+  .quantity-machine-partyes,
+  .on-machine,
+  .everything,
+  .quantity-pogM-mach-partyes,
+  .quantity-pogM,
+  .rolls,
+  .time-printing,
+  .relays,
+  .time-printing-roll,
+  .checking,
+  .material,
+  .printer,
+  .profile,
+  .color-settings,
+  .montage,
+  .demontage,
+  .view{
+    padding: 5px;
+    border: 1px solid ;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  .proj-name{
+    min-width: 118px;
+    max-width: 118px;
+  }
+  
+  .city{
+    min-width: 86px;
+    max-width: 86px;
+  }
+  
+  .type-machine{
+    min-width: 90px;
+    max-width: 90px;
+  }
+  
+  .quantity-machines{
+    min-width: 64px;
+    max-width: 64px;
+  }
+  
+  .quantity-machine-partyes,
+  .quantity-pogM-mach-partyes{
+    min-width: 400px;
+    max-width: 400px;
+  }
+  
+  .on-machine, .everything{
+    min-width: 50px;
+    max-width: 50px;
+  }
+  
+  .form-boxes .container .on-machine, .form-boxes .container .everything{
+    background: white;
+    border-bottom: 3px solid;
+  }
+  
+  .quantity-pogM, .rolls{
+    min-width: 110px;
+    max-width: 110px;
+  }
+  
+  .form-boxes .container .quantity-pogM,
+  .form-boxes .container .quant-pog-on-car,
+  .form-boxes .container .quant-all,
+  .form-boxes .container .rolls,
+  .form-boxes .container .on-car,
+  .form-boxes .container .time-printing,
+  .form-boxes .container .relays,
+  .form-boxes .container .time-printing-roll,
+  .form-boxes .container .checking,
+  .form-boxes .container .montage,
+  .form-boxes .container .demontage,
+  .form-boxes .container .view{
+    background: white;
+  }
+  
+  .time-printing, .relays, .time-printing-roll{
+    min-width: 60px;
+    max-width: 60px;
+  }
+  
+  .checking,
+  .material,
+  .printer,
+  .profile,
+  .color-settings,
+  .montage,
+  .demontage,
+  .view{
+    min-width: 80px;
+    max-width: 80px;
+  }
+  
+  .quant-pogM-box,
+  .roll-boxes{
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .quantity-machine-partyes p, 
+  .quantity-pogM-mach-partyes p{
+    font-size: 20px;
+    border: none;
+  }
+  
+  .quantity-machine-partyes, 
+  .quantity-pogM-mach-partyes,
+  .quantity-pogM, .rolls{
+    flex-direction: column;
+    position: relative;
+  }
+  .quantity-machine-partyes .list, 
+  .quantity-pogM-mach-partyes .list,
+  .quant-pogM-box, .roll-boxes
+  {
+    position: absolute;
+    bottom: 0;
+  }
+  
+  .list{
+    display: flex;
+    border: 1px solid;
+    margin-top: 19px;
+  }
+  .list .mach-party,
+  .list .pog-mach-party{
+    border: 1px solid;
+    text-align: center;
+    padding-top: 5px;
+    height: 30px;
+    min-width: 50px;
+    max-width: 50px;
+  }
+  
+  .quant-pogM-box, .roll-boxes{
+    display: flex;
+    border: 1px solid;
+  }
+  
+  .quant-pogM-box .quant-pog-on-car, .quant-all,
+  .roll-boxes .on-car, .quant-all{
+    border: 1px solid;
+    font-size: 12px;
+    font-weight: 700;
+    height: 30px;
+    min-width: 55px;
+    max-width: 55px;
+  }
+  
+  .quant-pog-on-car, .on-car{
+    padding-left: 6px;
+  }
+  
+  .quant-all, .quant-all{
+    padding: 7px;
+  }
+  
+  .material {
+    min-width: 218px !important;
+    max-width: 218px !important;
+    padding-left: 70px;
+    font-size: 18px;
+  }
+  
+  .printer{
+    font-size: 18px;
+  }
+  
+  .profile{
+     min-width: 218px !important;
+     max-width: 218px !important;
+     padding-left: 70px;
+     font-size: 18px;
+  }
+  
+  .color-settings{
+    font-size: 18px;
+  }

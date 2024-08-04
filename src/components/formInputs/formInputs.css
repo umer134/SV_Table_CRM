@@ -19,8 +19,12 @@ input[type=number] {
     margin-left: 40px;
     min-width: 100%; 
 }
-
-.form-inputs{
+.FormInputs .container{
+    transform: scale(0.8);
+  transform-origin: top left; 
+  
+}
+.form-inputs {
     margin-top: 10px;
     display: flex;
     align-items: center;
