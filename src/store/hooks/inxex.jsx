@@ -432,6 +432,29 @@ const createRowStore = (index) => {
 
       store.setState({timePrintResult: (rollPrintingTime * totalRolls).toFixed(2) });
       store.setState( {relaysResult: (timePrintResult / 10).toFixed(2)} )
+  },
+
+  cleanFormValues : (index) => {
+    const store = rowStores[index];
+    // const {mParty1, mParty2,
+    //   mParty3, mParty4,mParty5, mParty6, mParty7, mParty8, onMach,
+    //   setMParty1, setMParty2, setMParty3, setMParty4, setMParty5, 
+    //   setMParty6, setMParty7, setMParty8, pogMParty1, pogMParty2,
+    //   pogMParty3, pogMParty4, pogMParty5, pogMParty6, pogMParty7,
+    //   pogMParty8, setPogMParty1, setPogMParty2, setPogMParty3,
+    //   setPogMParty4, setPogMParty5, setPogMParty6, setPogMParty7,
+    //   setPogMParty8, onCarPogM, totalCarPogM, rollsOnCar, totalRolls,
+    //   rollPrintingTime, selectOption, setSelectOption, timePrintResult,
+    //   relaysResult, quantCars,} = store.getState();
+    
+
+    store.setState({mParty1:'', mParty2:'',
+      mParty3:'', mParty4:'',mParty5:'', mParty6:'', mParty7:'', mParty8:'', onMach:0,
+      pogMParty1:'', pogMParty2:'',
+      pogMParty3:'', pogMParty:'', pogMParty5:'', pogMParty6:'', pogMParty7:'',
+      pogMParty8:'', onCarPogM:0, totalCarPogM:0, rollsOnCar:0, totalRolls:0,
+      rollPrintingTime:0, selectOption:0, setSelectOption:0, timePrintResult:0,
+      relaysResult:0, quantCars:'', totalCarsParts:0})
   }
 
   }));

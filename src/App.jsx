@@ -10,6 +10,7 @@ function App() {
   
   const [tableRows, setTableRows] = useState(Array(60).fill())
   const [start, setStart] = useState(false);
+  const [cleanForm, setCleanForm] = useState(false);
   const [tableIndex, setTableIndex] = useState(Array(60).fill());
   const [currentIndex, setCurrentIndex] = useState(0)
   tableRows?.map((_, index) => {
@@ -24,13 +25,13 @@ function App() {
   return (
     <div className='App'>
      <div className="header">
-     <FormTable index={currentIndex} start={start} setStart={setStart} />
+     <FormTable index={currentIndex} start={start} setStart={setStart} cleanForm={cleanForm} setCleanForm={setCleanForm} />
      <FormBoxes />
      </div>
      <div className='main-form'>
      {
       tableRows?.map((_, index) => (
-     <FormInputs key={index} index={index} start={start} setStart={setStart} />
+     <FormInputs key={index} index={index} start={start} setStart={setStart} cleanForm={cleanForm} setCleanForm={setCleanForm} />
       ))
      }
      </div>

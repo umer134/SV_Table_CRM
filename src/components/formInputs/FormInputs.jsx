@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import "./formInputs.css"
 import rowStores from "../../store/hooks/inxex";
 
-const FormInputs = ({index, start, setStart}) => {
+const FormInputs = ({index, start, setStart, cleanForm, setCleanForm}) => {
 
     const useCalculateData = rowStores[index];
     const { mParty1, mParty2,
@@ -14,7 +14,7 @@ const FormInputs = ({index, start, setStart}) => {
     setPogMParty4, setPogMParty5, setPogMParty6, setPogMParty7,
     setPogMParty8, onCarPogM, totalCarPogM, rollsOnCar, totalRolls,
     rollPrintingTime, selectOption, setSelectOption, timePrintResult,
-    relaysResult, quantCars, setQuantCars, totalCarsParts, 
+    relaysResult, quantCars, setQuantCars, totalCarsParts,
     _4_540x720_Shubnikov, _6_540x720_Shubnikov, _8_540x720_Shubnikov, _6_720x1080_Shubnikov,
     _8_720x1080_Shubnikov, _8_1440x1440_Shubnikov, _10_1440x1440_Shubnikov, _4_540x720_F106366, _6_540x720_F106366,      
     _8_540x720_F106366, _6_720x1080_F106366, _8_720x1080_F106366, _6_720x1080_F108415,
@@ -55,6 +55,11 @@ const FormInputs = ({index, start, setStart}) => {
         });
       };
 
+      const cleanformValues = () => {
+        rowStores.forEach((store) => {
+          store.getState().cleanFormValues(index);
+        })
+      }
       useEffect(() => {
         if (start === true) {
           calcAllOnMach();
@@ -63,7 +68,11 @@ const FormInputs = ({index, start, setStart}) => {
           calcRollPrintingTime();
           setStart(start = false);
         }
-      }, [start]);
+       if(cleanForm === true){
+          cleanformValues();
+          setCleanForm(cleanForm = false);
+       }
+      }, [start, cleanForm]);
 
     return ( 
         <div className="FormInputs">

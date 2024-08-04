@@ -1,6 +1,6 @@
 import rowStores from "../../store/hooks/inxex";
 
-const FormTable = ({index, start, setStart}) => {
+const FormTable = ({index, start, setStart, cleanForm, setCleanForm}) => {
 
     const useCalculateData = rowStores[index];
     const {totalCarPogM, totalRolls, totalCarsParts, timePrintResult, relaysResult} = useCalculateData();
@@ -24,9 +24,9 @@ const FormTable = ({index, start, setStart}) => {
                     </div>
                 </div>
                 <div className="btns-block">
-                    <button className="inp-formuls" onClick={()=> setStart(!start)}>вставить формулы</button>
+                    <button className="inp-formuls" onClick={() => setStart(!start)}>вставить формулы</button>
                     <button className="inp-formuls">внести данные</button>
-                    <button className="inp-formuls">очистить форму</button>
+                    <button className="inp-formuls" onClick={() => setCleanForm(!start)}>очистить форму</button>
                 </div>
                 
             </div>
