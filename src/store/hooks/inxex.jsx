@@ -6,7 +6,9 @@ const createRowStore = (index) => {
   return create((set) => ({
 
     //колво однотипныx машин, обозначение и колво однотипныx частей на машину
-
+    projectTitle: '',
+    city: '',
+    machineType: '',
     quantCars: '',
     totalCarsParts: '',
     mParty1: '',
@@ -18,7 +20,8 @@ const createRowStore = (index) => {
     mParty7: '',
     mParty8: '',
     onMach: 0,
-
+    setProjectTitle: (value) => set(() => ({ projectTitle: value })),
+    setMachineType: (value) => set(() => ({ machineType: value })),
     setQuantCars: (value) => set(() => ({ quantCars: value })),
     setMParty1: (value) => set(() => ({ mParty1: value })),
     setMParty2: (value) => set(() => ({ mParty2: value })),
@@ -28,6 +31,7 @@ const createRowStore = (index) => {
     setMParty6: (value) => set(() => ({ mParty6: value })),
     setMParty7: (value) => set(() => ({ mParty7: value })),
     setMParty8: (value) => set(() => ({ mParty8: value })),
+    setCity: (value) => set(() => ({ city: value })),
 
     calcOnMach: (index) => {
       const store = rowStores[index];
@@ -448,7 +452,7 @@ const createRowStore = (index) => {
     //   relaysResult, quantCars,} = store.getState();
     
 
-    store.setState({mParty1:'', mParty2:'',
+    store.setState({ projectTitle: '', city: '', machineType: '', mParty1:'', mParty2:'',
       mParty3:'', mParty4:'',mParty5:'', mParty6:'', mParty7:'', mParty8:'', onMach:0,
       pogMParty1:'', pogMParty2:'',
       pogMParty3:'', pogMParty:'', pogMParty5:'', pogMParty6:'', pogMParty7:'',

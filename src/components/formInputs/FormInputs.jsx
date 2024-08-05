@@ -5,8 +5,9 @@ import rowStores from "../../store/hooks/inxex";
 const FormInputs = ({index, start, setStart, cleanForm, setCleanForm}) => {
 
     const useCalculateData = rowStores[index];
-    const { mParty1, mParty2,
-    mParty3, mParty4,mParty5, mParty6, mParty7, mParty8, onMach,
+    const {projectTitle, city, machineType, setProjectTitle, setCity,
+    setMachineType,  mParty1, mParty2, mParty3, mParty4, mParty5, 
+    mParty6, mParty7, mParty8, onMach,
     setMParty1, setMParty2, setMParty3, setMParty4, setMParty5, 
     setMParty6, setMParty7, setMParty8, pogMParty1, pogMParty2,
     pogMParty3, pogMParty4, pogMParty5, pogMParty6, pogMParty7,
@@ -78,9 +79,9 @@ const FormInputs = ({index, start, setStart, cleanForm, setCleanForm}) => {
         <div className="FormInputs">
             <div className="container">
                 <div className="form-inputs">
-                    <input type="text" className="name-input"/>
-                    <input type="text" className="city-input"/>
-                    <input type="text" className="mach_type-input"/>
+                    <input type="text" value={projectTitle} onChange={(e) => setProjectTitle(e.target.value)} className="name-input"/>
+                    <input type="text" value={city} onChange={(e) => setCity(e.target.value)} className="city-input"/>
+                    <input type="text" value={machineType} onChange={(e) => setMachineType(e.target.value)} className="mach_type-input"/>
                     <input type="text" value={quantCars} onChange={(e) => setQuantCars(e.target.value)} className="quant-mach_type-input"/>
                     <input type="text" value={mParty1} onChange={(e) => setMParty1(e.target.value)} name="mach_pary-input_1" className="mach_party-input"/>
                     <input type="text" value={mParty2} onChange={(e) => setMParty2(e.target.value)} name="mach_pary-input_2" className="mach_party-input"/>
