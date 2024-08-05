@@ -16,7 +16,7 @@ input[type=number] {
 }
 
 .FormInputs {
-    margin-left: 40px;
+    margin-left: 17px;
     min-width: 100%; 
 }
 .FormInputs .container{
@@ -24,6 +24,20 @@ input[type=number] {
   transform-origin: top left; 
   
 }
+
+.row-num{
+    border: 1px solid black;
+    margin-top: 10px;
+    height: 29px;
+    min-width: 29px;
+    max-width: 29px;
+    /* padding-left: 9px;
+    padding-top: 5px; */
+    display: flex;
+    align-items: center !important;
+    justify-content: center;
+}
+
 .form-inputs {
     margin-top: 10px;
     display: flex;

@@ -78,6 +78,7 @@ const FormInputs = ({index, start, setStart, cleanForm, setCleanForm}) => {
     return ( 
         <div className="FormInputs">
             <div className="container">
+              <div className="row-num">{index}</div>
                 <div className="form-inputs">
                     <input type="text" value={projectTitle} onChange={(e) => setProjectTitle(e.target.value)} className="name-input"/>
                     <input type="text" value={city} onChange={(e) => setCity(e.target.value)} className="city-input"/>
