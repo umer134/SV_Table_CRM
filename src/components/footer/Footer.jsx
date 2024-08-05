@@ -1,6 +1,8 @@
+import "./footer.css"
+
 const Footer = () => {
     return ( 
-        <div className="footer">
+        <div className="Footer">
             <div className="container">
                 <div className="form-btn">
                     <button>форма</button>

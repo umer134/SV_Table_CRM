@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Footer .container{
+    
+}
+
+button{
+    width: 67px;
+    height: 34px;
+    margin-top: 2px;
+    margin-left: 2px;
+    border-radius: 8%;
+    background: #4676D7;
+    color: #fff;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #1d49aa;
+  }
+  
+  .button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px #cbd6ee;
+  }
+
