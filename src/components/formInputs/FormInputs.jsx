@@ -93,7 +93,7 @@ const FormInputs = ({index, start, setStart, cleanForm, setCleanForm}) => {
                     <input type="text" value={mParty7} onChange={(e) => setMParty7(e.target.value)} name="mach_pary-input_7" className="mach_party-input"/>
                     <input type="text" value={mParty8} onChange={(e) => setMParty8(e.target.value)} name="mach_pary-input_8" className="mach_party-input"/>
                     <div className="on-machine-input">{onMach}</div>
-                    <div className="everything-input">{totalCarsParts}</div>
+                    <div className="everything-input">{totalCarsParts || 0}</div>
                     <input type="number" value={pogMParty1} onChange={(e) => setPogMParty1(e.target.value)} name="machPogm_pary-input_1" className="machPogm_party-input"/>
                     <input type="number" value={pogMParty2} onChange={(e) => setPogMParty2(e.target.value)} name="machPogm_pary-input_2" className="machPogm_party-input"/>
                     <input type="number" value={pogMParty3} onChange={(e) => setPogMParty3(e.target.value)} name="machPogm_pary-input_3" className="machPogm_party-input"/>

@@ -54,8 +54,8 @@ const createRowStore = (index) => {
     pogMParty6: '',
     pogMParty7: '',
     pogMParty8: '',
-    onCarPogM: 0,
-    totalCarPogM: "",
+    onCarPogM: '',
+    totalCarPogM: '',
 
     setPogMParty1: (value) => set(() => ({ pogMParty1: value })),
     setPogMParty2: (value) => set(() => ({ pogMParty2: value })),
@@ -456,8 +456,8 @@ const createRowStore = (index) => {
       mParty3:'', mParty4:'',mParty5:'', mParty6:'', mParty7:'', mParty8:'', onMach:0,
       pogMParty1:'', pogMParty2:'',
       pogMParty3:'', pogMParty:'', pogMParty5:'', pogMParty6:'', pogMParty7:'',
-      pogMParty8:'', onCarPogM:0, totalCarPogM:0, rollsOnCar:0, totalRolls:0,
-      rollPrintingTime:0, selectOption:0, setSelectOption:0, timePrintResult:0,
+      pogMParty8:'', onCarPogM:0, totalCarPogM:0, rollsOnCar:0, totalRolls:0, rollPrintingTime: 0, 
+       timePrintResult:0,
       relaysResult:0, quantCars:'', totalCarsParts:0})
   }
 
