@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import "./formInputs.css"
-import rowStores from "../../store/hooks/inxex";
+import rowStores from "../../../store/hooks/inxex";
 
 const FormInputs = ({index, start, setStart, cleanForm, setCleanForm}) => {
 

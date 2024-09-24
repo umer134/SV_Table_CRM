@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import './App.css'
-import FormTable from './components/formTable/FormTable'
-import FormBoxes from './components/formBoxes/FormBoxes'
-import FormInputs from './components/formInputs/FormInputs'
+import FormTable from './components/form/formTable/FormTable'
+import FormBoxes from './components/form/formBoxes/FormBoxes'
+import FormInputs from './components/form/formInputs/FormInputs'
 import Footer from './components/footer/Footer'
+import SvodTech_table from './components/svod_tech/svodTable/SvodTable'
+import SvodInputs from './components/svod_tech/svodInputs/SvodInputs'
 
 
 function App() {
@@ -23,18 +25,24 @@ function App() {
 
 
   return (
-    <div className='App'>
+    <div >
      <div className="header">
-     <FormTable index={currentIndex} start={start} setStart={setStart} cleanForm={cleanForm} setCleanForm={setCleanForm} />
+     <FormTable index={currentIndex} start={start} 
+      setStart={setStart} cleanForm={cleanForm}
+      setCleanForm={setCleanForm} />
      <FormBoxes />
      </div>
      <div className='main-form'>
      {
       tableRows?.map((_, index) => (
-     <FormInputs key={index} index={index} start={start} setStart={setStart} cleanForm={cleanForm} setCleanForm={setCleanForm} />
+     <FormInputs key={index} index={index} 
+     start={start} setStart={setStart} 
+     cleanForm={cleanForm} setCleanForm={setCleanForm} />
       ))
      }
      </div>
+     <SvodTech_table />
+     <SvodInputs />
      <div className='footer'>
      <Footer />
      </div>

@@ -10,6 +10,9 @@ const Footer = () => {
                 <div className="print-btn">
                     <button>печать</button>
                 </div>
+                <div className="summary-btn">
+                    <button>свод</button>
+                </div>
             </div>
         </div>
      );

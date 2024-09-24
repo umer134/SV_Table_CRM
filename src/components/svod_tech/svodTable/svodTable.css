@@ -1,0 +1,47 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.SV_table__head{
+    display: flex;
+    flex-direction: row;
+    max-height: 40px;
+    max-width: 110%;
+    min-width: 110%;
+}
+.SV_table__head div {
+    border: 1px solid gray;
+    font-size: 12px;
+    font-weight: 700;
+    min-width: 60px;
+    text-align: center;
+}
+
+.SV_SP__cells {
+    display: flex;
+    flex-direction: row;
+    border: none !important;
+}
+
+.SV_SP__cells div {
+    max-width: 24px;
+    min-width: 24px;
+    text-align: center;
+    border-top: none !important;
+    border-bottom: none !important ;
+}
+
+.SV_name__project {
+    padding: 0 35px;
+}
+
+.SV_city, .SV_view__machine {
+    padding: 0 28px;
+    
+
+}
