@@ -10,7 +10,7 @@ const SvodTech_table = () => {
         <div className="SV_number__machine">Номер <br/> машины</div>
         <div className="SV_name">Обоз <br/> начение</div>
         <div className="SV_quantity__lists">Кол-во <br/> листов</div>
-        <div className="SV_quantity__pog.m">Кол-во пог.м в <br/> одном листе</div>
+        <div className="SV_quantity__pogm">Кол-во пог.м в <br/> одном листе</div>
         <div className="SV_rolls">Рулоны</div>
         <div className="SV_printing__time">Время<br/>печати, час</div>
         <div className="SV_relays">Смены</div>

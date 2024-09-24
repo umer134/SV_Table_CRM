@@ -1,4 +1,4 @@
-import rowStores from "../../../store/hooks/inxex";
+import rowStores from "../../../store/hooks/form_index";
 
 const FormTable = ({index, start, setStart, cleanForm, setCleanForm}) => {
 
